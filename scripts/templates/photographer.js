@@ -4,7 +4,9 @@ function photographerTemplate(data) {
     const picture = `assets/photographers/${portrait}`;
 
     function getUserCardDOM() {
+        // Création d'une balise dédiée à chaque photographe
         const article = document.createElement( 'article' );
+        
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
         const h2 = document.createElement( 'h2' );
@@ -15,7 +17,8 @@ function photographerTemplate(data) {
         p.textContent = tagline;
         const pPrice = document.createElement( 'p' )
         pPrice.textContent = `${price}€/jour`;
-        
+        article.dataset.id = data.id;
+        console.log(article.dataset.id);
         article.appendChild(img);
         article.appendChild(h2);
         article.appendChild(h3);
