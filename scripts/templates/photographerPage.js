@@ -5,10 +5,11 @@ function photographerPageTemplate(data) {
 
     function getPageUserCardDOM() {
         // Création d'une balise dédiée à chaque photographe
-        const containerPagePhtographer = document.querySelector(".photograph-header");
+        const containerPagePhotographer = document.querySelector(".photograph-header");
         const main = document.getElementById("main");
         const containerH2Paragraph = document.createElement('div');
         const article = document.createElement( 'article' );
+        const divImg = document.createElement('div');
         const img = document.createElement( 'img' );
         img.setAttribute("alt", `${name} - page photographe de ${name}`);
         img.setAttribute("src", picture);
@@ -26,19 +27,25 @@ function photographerPageTemplate(data) {
         pPrice.textContent = `${price}€/jour`;
         pPrice.classList.add("pPrice");
         article.dataset.id = data.id;
+        containerH2Paragraph.dataset.id = data.id;
         console.log(article.dataset.id);
         const imgLogoHeader = document.querySelector(".logo");
         imgLogoHeader.setAttribute("role", "img");
         article.classList.add("photographer-item");
-        article.appendChild(img);
-        //article.appendChild(h2);
-        //article.appendChild(pCityCountry);
-        //article.appendChild(pTagline);
-        containerH2Paragraph.classList.add(".h2-paragraph");
+        divImg.appendChild(img);
+        const buttonContact = document.createElement("button");
+        buttonContact.classList.add("contact_button");
+        buttonContact.textContent = "Contactez-moi";
+        buttonContact.addEventListener('click', function() {
+            displayModal();
+        });
+        containerH2Paragraph.classList.add("h2-paragraph");
         containerH2Paragraph.appendChild(h2);
         containerH2Paragraph.appendChild(pCityCountry);
         containerH2Paragraph.appendChild(pTagline);
-        article.appendChild(containerH2Paragraph);
+        containerPagePhotographer.appendChild(containerH2Paragraph);
+        containerPagePhotographer.appendChild(buttonContact);
+        containerPagePhotographer.appendChild(divImg);
         main.appendChild(pPrice);
         return (article);
     }

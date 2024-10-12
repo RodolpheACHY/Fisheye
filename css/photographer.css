@@ -1,3 +1,4 @@
+
 #contact_modal {
     display: none;
 }
@@ -8,9 +9,8 @@
     margin: 0 100px;
 }
 
-.contact_button {
+.photograph-header button {
     font-size: 20px;
-    font-weight: bold;
     color: white;
     padding: 11px;
     width: 170px;
@@ -19,6 +19,9 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .modal {
@@ -75,7 +78,7 @@ form input {
     border-radius: 5px;
 }
 
-.photograph-header article h2 {
+.photograph-header h2 {
     color: #D3573C;
     font-size: 4em;
     text-align: center;
@@ -86,7 +89,7 @@ form input {
     line-height: normal; 
 }
 
-.photograph-header article .pCityCountry {
+.photograph-header .pCityCountry {
     color: #901C1C;
     text-align: center;
     font-family: "DM Sans";
@@ -98,7 +101,7 @@ form input {
     margin-bottom: 0px;
 }
 
-.photograph-header article .pTagline {
+.photograph-header .pTagline {
     color: #000;
     text-align: center;
     font-family: "DM Sans";
@@ -106,13 +109,21 @@ form input {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-top: 0.3125em;
     margin-bottom: 0px;
 }
 
-.photographer-item {
+.photograph-header {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* height: 100%; */
+    width: 100%;
 }
 
+.photograph-header .h2-paragraph{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+}
