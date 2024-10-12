@@ -1,12 +1,14 @@
-function photographerTemplate(data) {
+function photographerPageTemplate(data) {
     const { name, id, city, country, tagline, price, portrait } = data;
 
     const picture = `assets/photographers/${portrait}`;
 
-    function getUserCardDOM() {
+    function getPageUserCardDOM() {
         // Création d'une balise dédiée à chaque photographe
+        const containerPagePhtographer = document.querySelector(".photograph-header");
+        const main = document.getElementById("main");
+        const containerH2Paragraph = document.createElement('div');
         const article = document.createElement( 'article' );
-
         const img = document.createElement( 'img' );
         img.setAttribute("alt", `${name} - page photographe de ${name}`);
         img.setAttribute("src", picture);
@@ -28,14 +30,18 @@ function photographerTemplate(data) {
         const imgLogoHeader = document.querySelector(".logo");
         imgLogoHeader.setAttribute("role", "img");
         article.classList.add("photographer-item");
-        aLink.appendChild(img);
-        aLink.appendChild(h2);
-        aLink.appendChild(pCityCountry);
-        aLink.appendChild(pTagline);
-        aLink.appendChild(pPrice);
-        article.appendChild(aLink);
+        article.appendChild(img);
+        //article.appendChild(h2);
+        //article.appendChild(pCityCountry);
+        //article.appendChild(pTagline);
+        containerH2Paragraph.classList.add(".h2-paragraph");
+        containerH2Paragraph.appendChild(h2);
+        containerH2Paragraph.appendChild(pCityCountry);
+        containerH2Paragraph.appendChild(pTagline);
+        article.appendChild(containerH2Paragraph);
+        main.appendChild(pPrice);
         return (article);
     }
-    return { name, picture, getUserCardDOM }
+    return { name, picture, getPageUserCardDOM }
 }
 

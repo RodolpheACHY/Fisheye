@@ -74,3 +74,45 @@ form input {
     border: none;
     border-radius: 5px;
 }
+
+.photograph-header article h2 {
+    color: #D3573C;
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+}
+
+.photograph-header article .pCityCountry {
+    color: #901C1C;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.photograph-header article .pTagline {
+    color: #000;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 1.125em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0.3125em;
+    margin-bottom: 0px;
+}
+
+.photographer-item {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
