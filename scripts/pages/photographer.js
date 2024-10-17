@@ -1,6 +1,6 @@
 //Mettre le code JavaScript lié à la page photographer.html
 async function getMediasByPhotographer(photographerId) {
-    const response = await fetch('/data/photographers.json'); // Remplace par l'URL correcte
+    const response = await fetch('/data/photographers.json');
     const datas = await response.json();
 
     // Filtrer les médias pour le photographe spécifique
@@ -11,23 +11,25 @@ async function getMediasByPhotographer(photographerId) {
 }
 
 function displayDataPage(datas) {
-    const photographHeader = document.querySelector(".photograph-header");
-    
+    //const photographHeader = document.querySelector(".photograph-header");
+    const photographMain = document.getElementById("main");
+
     // Récupérer l'ID du photographe depuis l'URL
     const urlParams = new URLSearchParams(window.location.search);
-    const photographerId = parseInt(urlParams.get('id'));  // Assure-toi que l'URL contient ?id=XX
+    const photographerId = parseInt(urlParams.get('id'));
     // Trouver le photographe correspondant à cet ID
     const photographer = datas.photographers.find(p => p.id === photographerId);
     // afficher les données du photographe
     const photographerModel = photographerPageTemplate(photographer);
     const getPageUserCardDOM = photographerModel.getPageUserCardDOM();
-    photographHeader.appendChild(getPageUserCardDOM);
+    //photographHeader.appendChild(getPageUserCardDOM);
+    photographMain.appendChild(getPageUserCardDOM);
 }
 
 async function init() {
     // Récupérer l'ID du photographe depuis l'URL
     const urlParams = new URLSearchParams(window.location.search);
-    const photographerId = parseInt(urlParams.get('id'));  // Assure-toi que l'URL contient ?id=XX
+    const photographerId = parseInt(urlParams.get('id'));
     
     // Vérifier que l'ID du photographe est bien présent
     if (photographerId) {
