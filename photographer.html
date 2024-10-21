@@ -15,11 +15,12 @@
       <img src="assets/images/logo.png" class="logo" />
     </header>
     <main id="main">
-      <!-- <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">
+      <!--   <div class="photograph-header">
+            <button class="contact_button" onclick="displayModal()">
           Contactez-moi
         </button> 
       </div> -->
+      <div id="media-container"></div>
     </main>
     <div id="contact_modal">
       <div class="modal">
@@ -36,8 +37,9 @@
         </form>
       </div>
     </div>
+    <script src="/scripts/utils/mediaFactory.js"></script>
     <script src="/scripts/templates/photographerPage.js"></script>
-    <script src="/scripts/pages/photographer.js"></script>
+    <script src="/scripts/pages/photographer.js" defer></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>

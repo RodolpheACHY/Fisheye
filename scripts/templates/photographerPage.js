@@ -48,7 +48,9 @@ function photographerPageTemplate(data) {
         containerPagePhotographer.appendChild(containerH2Paragraph);
         containerPagePhotographer.appendChild(buttonContact);
         containerPagePhotographer.appendChild(divImg);
+        main.appendChild(containerPagePhotographer);
         main.appendChild(pPrice);
+        main.prepend(containerPagePhotographer);
         return (containerPagePhotographer);
         //return (article);
     }
