@@ -41,8 +41,9 @@ async function init() {
       console.log("myMedia", myMedia);
       console.log("myMedia.getMarkup", myMedia.getMarkup());
       const div = document.createElement("div");
+      // const slide = document.querySelector("")
       div.innerHTML = myMedia.getMarkup();
-      div.classList.add(slide)
+      // div.classList.add(slide)
       mediaContainer.append(div);
     });
     displayDataPage(photographerData.photographer);

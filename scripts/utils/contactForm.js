@@ -10,6 +10,7 @@ function closeModal() {
 
 // DOM Elements
 
+const form = document.querySelector("form");
 const divModal = document.querySelector('form div');
 divModal.classList.add("divModal");
 const labelNom = document.createElement("label");
