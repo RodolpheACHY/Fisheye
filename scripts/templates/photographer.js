@@ -6,7 +6,6 @@ function photographerTemplate(data) {
     function getUserCardDOM() {
         // Création d'une balise dédiée à chaque photographe
         const article = document.createElement( 'article' );
-
         const img = document.createElement( 'img' );
         img.setAttribute("alt", `${name} - page photographe de ${name}`);
         img.setAttribute("src", picture);

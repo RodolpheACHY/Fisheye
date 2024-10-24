@@ -148,3 +148,70 @@ form input {
   flex-shrink: 0;
   object-fit: cover;
 }
+
+.floating-element {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #DB8876;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 999;
+  width: 376px;
+  height: 89px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row-reverse ;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-right: 30px;
+}
+
+.floating-element .pPrice {
+  color: #000;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+
+#containerCountLike {
+  display: flex;
+  align-items: center;
+}
+
+.floating-element p {
+  color: #000;
+  /* text-align: center; */
+  font-family: "DM Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.slide {
+  position: absolute;
+  height: 100%; /* c-a-d 100% de son parent, ce qui signifie ici 100% de 100vh (viewport height, la taille de l'écran de l'utilisateur.) */
+  width: 100%; /* pareil mais pour la width. On tape un raccourci w100 pour width:100% */
+  opacity : 0; /* de base, on les masque, sauf celle qui a l'atrribut active */
+  transition: 0.4s ease-in-out;
+}
+
+.slide.active {  /* sans espace, c-a-d que la balise a les 2 classes. avec un space, ça signifierait une un element avec la balise active dont la parent a la classe slide */ 
+  opacity: 1;
+}
+
+.slide img {
+  display: block;
+  height: 100%; /* prend 50% de son parent en hauteur*/
+  width: 100%;
+  object-fit: cover;
+}

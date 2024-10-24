@@ -1,5 +1,5 @@
 function photographerPageTemplate(data) {
-    const { name, id, city, country, tagline, price, portrait } = data;
+    const { name, id, city, country, tagline, price, portrait, likes, title } = data;
 
     const picture = `assets/photographers/${portrait}`;
 
@@ -9,6 +9,17 @@ function photographerPageTemplate(data) {
         const containerPagePhotographer = document.createElement('div');
         containerPagePhotographer.classList.add("photograph-header");
         const main = document.getElementById("main");
+        //const heartIcon = document.createElement("i"); 
+        const divPriceLikeFloat = document.createElement('div');
+        divPriceLikeFloat.classList.add("floating-element");
+        const containerCountLike = document.createElement('div');
+        containerCountLike.setAttribute("id", "containerCountLike");
+        containerCountLike.innerHTML = `
+                                <p>297 666</p>
+                                <i class="fa-solid fa-heart"></i>
+                                `;
+        //const pCountLike = document.createElement('p');
+        //pCountLike.textContent = `297666`
         const containerH2Paragraph = document.createElement('div');
         //const article = document.createElement( 'article' );
         const divImg = document.createElement('div');
@@ -48,8 +59,11 @@ function photographerPageTemplate(data) {
         containerPagePhotographer.appendChild(containerH2Paragraph);
         containerPagePhotographer.appendChild(buttonContact);
         containerPagePhotographer.appendChild(divImg);
+        divPriceLikeFloat.appendChild(pPrice);
+        divPriceLikeFloat.appendChild(containerCountLike);
         main.appendChild(containerPagePhotographer);
-        main.appendChild(pPrice);
+        main.appendChild(divPriceLikeFloat)
+        // main.appendChild(pPrice);
         main.prepend(containerPagePhotographer);
         return (containerPagePhotographer);
         //return (article);
