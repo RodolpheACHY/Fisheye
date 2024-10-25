@@ -16,12 +16,8 @@ async function getPhotographerData(photographerId) {
 }
 
 function displayDataPage(photographer) {
-  const photographHeader = document.querySelector(".photograph-header");
-
-  // afficher les données du photographe
   const photographerModel = photographerPageTemplate(photographer);
-  const getPageUserCardDOM = photographerModel.getPageUserCardDOM();
-  photographHeader.appendChild(getPageUserCardDOM);
+  return photographerModel.getPageUserCardDOM();
 }
 
 async function init() {
@@ -43,6 +39,9 @@ async function init() {
       const div = document.createElement("div");
       // const slide = document.querySelector("")
       div.innerHTML = myMedia.getMarkup();
+      const h2 = document.createElement('h2');
+      h2.textContent = myMedia.title;
+      div.append(h2);
       // div.classList.add(slide)
       mediaContainer.append(div);
     });
