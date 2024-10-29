@@ -131,7 +131,7 @@ form input {
   flex-wrap: wrap; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 70px;
+  gap: 30px 70px;
   margin-top: 100px;
   margin-left: 100px;
   margin-right: 100px;
@@ -198,13 +198,14 @@ form input {
   margin-bottom: 0;
 }
 
-.slide {
+/* slide c'est pour le carousel :*/
+ .slide {
   position: absolute;
   height: 100%; /* c-a-d 100% de son parent, ce qui signifie ici 100% de 100vh (viewport height, la taille de l'écran de l'utilisateur.) */
   width: 100%; /* pareil mais pour la width. On tape un raccourci w100 pour width:100% */
   opacity: 0; /* de base, on les masque, sauf celle qui a l'atrribut active */
   transition: 0.4s ease-in-out;
-}
+} 
 
 .slide.active {
   /* sans espace, c-a-d que la balise a les 2 classes. avec un space, ça signifierait une un element avec la balise active dont la parent a la classe slide */
@@ -216,4 +217,104 @@ form input {
   height: 100%; /* prend 50% de son parent en hauteur*/
   width: 100%;
   object-fit: cover;
+}
+
+
+.h2LikeContainer {
+  display: flex;
+  justify-content: space-between;
+  color: #901C1C;
+  font-weight: normal;
+}
+
+.likeContainer {
+  display: flex;
+  justify-content:flex-start;
+  align-items:center;
+  
+}
+
+.heartIcon {
+  margin-left: 0.2em;
+  /*margin-top: -22px;*/
+  font-size: 1.5em;
+}
+
+h2 {
+  font-weight: normal;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+p {
+  font-size: 1.5em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.contact_button {
+  width: 170px;
+  height: 69px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border-style: none;
+  background-color: #901C1C;
+  color: #FFF;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+}
+
+input {
+color: #312E2E;
+font-family: "DM Sans";
+font-size: 36px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+#message {
+color: #312E2E;
+font-family: "DM Sans";
+font-size: 36px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+border-radius: 5px;
+border-style: none;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }

@@ -11,8 +11,6 @@ const mediaFactory = function (media, folder) {
       } else if (image) {
         return `<img src="/assets/photographers/${folder}/${image}" alt="${title}" />`;
       }
-      const h3Media = document.createElement("h3");
-      h3Media.classList.add("h3Media");
     },
   };
 };

@@ -41,9 +41,23 @@ async function init() {
       div.innerHTML = myMedia.getMarkup();
       const h2 = document.createElement('h2');
       h2.textContent = myMedia.title;
-      div.append(h2);
-      // div.classList.add(slide)
+      //div.append(h2);
+      const likeContainer = document.createElement("div");
+      likeContainer.classList.add('likeContainer');
+      const pLike = document.createElement('p');
+      pLike.textContent = myMedia.likes;
+      const heartIcon = document.createElement('i');
+      heartIcon.classList.add('fa-solid', 'fa-heart', 'heartIcon'); 
+      likeContainer.append(pLike, heartIcon);
+      const h2LikeContainer = document.createElement('div');
+      h2LikeContainer.classList.add('h2LikeContainer');
+      h2LikeContainer.append(h2, likeContainer);
+      div.append(h2LikeContainer);
+      //const gridItem = document.createElement(".gridItem");
+      div.classList.add("grid-item");
+      //div.append(likeContainer);
       mediaContainer.append(div);
+      
     });
     displayDataPage(photographerData.photographer);
   } else {
