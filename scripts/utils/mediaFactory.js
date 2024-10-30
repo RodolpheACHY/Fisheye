@@ -7,9 +7,9 @@ const mediaFactory = function (media, folder) {
     title,
     getMarkup: function () {
       if (video) {
-        return `<video src="/assets/photographers/${folder}/${video}" controls/>`;
+        return `<video src="/assets/photographers/${folder}/${video}" onclick="displayLightbox(this.src)" controls />`;
       } else if (image) {
-        return `<img src="/assets/photographers/${folder}/${image}" alt="${title}" />`;
+        return `<img src="/assets/photographers/${folder}/${image}" alt="${title}" onclick="displayLightbox(this.src)" />`;
       }
     },
   };

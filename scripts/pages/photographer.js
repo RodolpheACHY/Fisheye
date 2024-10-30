@@ -57,6 +57,8 @@ async function init() {
       div.classList.add("grid-item");
       //div.append(likeContainer);
       mediaContainer.append(div);
+      //const gridItems = document.querySelectorAll('.grid-item');  //ici ça marche
+      //console.log(gridItems);
       
     });
     displayDataPage(photographerData.photographer);

@@ -1,6 +1,9 @@
-function displayLightbox() {
+function displayLightbox(imageSrc) {
     const lightbox = document.querySelector('.lightbox');
-	lightbox.style.display = "block";
+    const lightboxImage = document.querySelector(".lightbox-image");
+	lightbox.style.display = "flex";
+    lightboxImage.src = imageSrc;
+    lightbox.classList.add("active");
 }
 
 function closeLightBox() {
@@ -9,9 +12,8 @@ function closeLightBox() {
     lightbox.style.display = "none";
 }
 
-
-const gridItems = document.querySelectorAll('.grid-item');
 //const lightbox = document.querySelector('.lightbox');
+
 //const lightboxImage = document.querySelector('.lightbox-image');
 //const closeButton = document.querySelector('.close');   
 
@@ -26,20 +28,18 @@ const body = document.querySelector("body");
 lightboxDiv.append(lightboxClose);
 lightboxDiv.append(lightImgElement);
 body.append(lightboxDiv);
+lightboxClose.addEventListener('click', function() {
+    closeLightBox();
+});
 
-
-
+/*
 gridItems.forEach(item => {
   item.addEventListener('click', () => {
     console.log("test");
     //lightImgElement.src= item.src;
     //lightbox.style.display = 'flex';
     //lightboxDiv.style.display = 'flex';
-    //displayLightbox();
+    //displayLightbox(ima);
     
   });
-});
-
-lightboxClose.addEventListener('click', () => {
-  lightbox.style.display = 'none';
-});
+}); */
