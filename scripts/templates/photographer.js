@@ -6,33 +6,41 @@ function photographerTemplate(data) {
     function getUserCardDOM() {
         // Création d'une balise dédiée à chaque photographe
         const article = document.createElement( 'article' );
+        article.dataset.id = data.id;
+        console.log(article.dataset.id);
+        article.classList.add("photographer-item");
+
+        const aLink = document.createElement("a");
+        aLink.setAttribute("href", "photographer.html?id=" + id);
+        article.appendChild(aLink);
+
         const img = document.createElement( 'img' );
         img.setAttribute("alt", `${name} - page photographe de ${name}`);
         img.setAttribute("src", picture);
-        const aLink = document.createElement("a");
-        aLink.setAttribute("href", "photographer.html?id=" + id);
+        aLink.appendChild(img);
+
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
+        aLink.appendChild(h2);
+
         const pCityCountry = document.createElement( 'p' );
         pCityCountry.textContent = `${city}, ${country}`;
         pCityCountry.classList.add("pCityCountry");
+        aLink.appendChild(pCityCountry);
+
         const pTagline = document.createElement( 'p' );
         pTagline.textContent = tagline;
         pTagline.classList.add("pTagline");
+        aLink.appendChild(pTagline);
+
         const pPrice = document.createElement( 'p' )
         pPrice.textContent = `${price}€/jour`;
         pPrice.classList.add("pPrice");
-        article.dataset.id = data.id;
-        console.log(article.dataset.id);
+        aLink.appendChild(pPrice);
+
         const imgLogoHeader = document.querySelector(".logo");
         imgLogoHeader.setAttribute("role", "img");
-        article.classList.add("photographer-item");
-        aLink.appendChild(img);
-        aLink.appendChild(h2);
-        aLink.appendChild(pCityCountry);
-        aLink.appendChild(pTagline);
-        aLink.appendChild(pPrice);
-        article.appendChild(aLink);
+        
         return (article);
     }
     return { name, picture, getUserCardDOM }

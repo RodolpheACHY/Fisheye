@@ -53,13 +53,9 @@ async function init() {
       h2LikeContainer.classList.add('h2LikeContainer');
       h2LikeContainer.append(h2, likeContainer);
       div.append(h2LikeContainer);
-      //const gridItem = document.createElement(".gridItem");
       div.classList.add("grid-item");
       //div.append(likeContainer);
       mediaContainer.append(div);
-      //const gridItems = document.querySelectorAll('.grid-item');  //ici ça marche
-      //console.log(gridItems);
-      
     });
     displayDataPage(photographerData.photographer);
   } else {

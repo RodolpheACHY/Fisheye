@@ -23,21 +23,13 @@ buttons.forEach((button) => {
         const gridItems = document.querySelectorAll(".grid-item");
         const calcNextSlide = e.target.id === "next" ? 1 : -1;   // pour savoir si on doit faire un +1 ou un -1
         const slideActive = document.querySelector(".active");
-        //console.log(slides);  // slides retourne un nodelist et pas un tableau
-        //console.log([...slides].indexOf(slideActive)); // permet de destructurer la nodelist slides pour créer un tableau et de savoir à quel indec se trouve la classe slideActive active aved indexOff()
+        //console.log(gridItems);  // slides retourne un nodelist et pas un tableau
+        //console.log([...slides].indexOf(slideActive)); // permet de destructurer la nodelist slides pour créer un tableau et de savoir à quel index se trouve la classe slideActive active aved indexOff()
         console.log(gridItems, slideActive); 
         newIndex = calcNextSlide + [...gridItems].indexOf(slideActive);
         //console.log(newIndex);
         if (newIndex < 0) newIndex = [...gridItems].length -1;    // pour aller sur le dernier élément du tableau. Ici qd on est sur -1 et clique en arrière, on arrive sur 2.
         if (newIndex >= [...gridItems].length) newIndex = 0; // qd on est sur 2 et qd on clique sur droite, on retourne à 0
-        /* if (gridItems.length > 0 && slideActive) { 
-            gridItems[newIndex].classList.add('active'); 
-            slideActive.classList.remove('active'); 
-        } else { 
-            console.error('Element(s) not found:', {
-                 gridItemsLength: gridItems.length,
-                 slideActive: slideActive });
-        } */
         gridItems[newIndex].classList.add("active");
         slideActive.classList.remove("active");
     });
