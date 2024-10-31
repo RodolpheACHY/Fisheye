@@ -54,10 +54,13 @@ async function init() {
       h2LikeContainer.append(h2, likeContainer);
       div.append(h2LikeContainer);
       div.classList.add("grid-item");
+      div.setAttribute('id', myMedia.id);
       //div.append(likeContainer);
       mediaContainer.append(div);
     });
     displayDataPage(photographerData.photographer);
+    CountLikes();
+
   } else {
     console.log("Aucun ID de photographe trouvé dans l'URL.");
   }
