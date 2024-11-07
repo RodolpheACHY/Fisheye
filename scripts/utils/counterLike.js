@@ -10,6 +10,8 @@ async function CountLikes() {
     let c = parseInt(counterLikeP.innerText, 10);
     totalCount += c;
     heartIcon.addEventListener("click", (e) => {
+      e.stopImmediatePropagation();
+      e.stopPropagation();
       let globalCount = parseInt(globalCounter.textContent, 10);
       const id = e.target.closest(".grid-item").getAttribute("id");
       const isIncremented = likedMedias.includes(id);

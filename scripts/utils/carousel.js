@@ -20,10 +20,17 @@ buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     //console.log(e.target.id);
     const gridItems = document.querySelectorAll(".grid-item");
-   /**
-    * todo récupérer les objets media à partir de l'attribut data-media
-    */
+    /**
+     * todo récupérer les objets media à partir de l'attribut data-media
+     */
     const calcNextSlide = e.target.id === "next" ? 1 : -1; // pour savoir si on doit faire un +1 ou un -1
+    console.log("calcNextSlide", calcNextSlide);
+    const nextIndex = currentIndex + calcNextSlide;
+    displayLightbox(photographerMedias[nextIndex].id);
+
+    /*
+
+
     const slideActive = document.querySelector(".active");
     //console.log(gridItems);  // slides retourne un nodelist et pas un tableau
     //console.log([...slides].indexOf(slideActive)); // permet de destructurer la nodelist slides pour créer un tableau et de savoir à quel index se trouve la classe slideActive active aved indexOff()
@@ -36,6 +43,7 @@ buttons.forEach((button) => {
    
 
     slideActive.classList.remove("active");
+    */
   });
 });
 

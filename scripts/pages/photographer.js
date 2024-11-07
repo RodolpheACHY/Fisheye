@@ -1,3 +1,5 @@
+let photographerMedias = [];
+let photographerFolder = "";
 //Mettre le code JavaScript lié à la page photographer.html
 async function getPhotographerData(photographerId) {
   const response = await fetch("/data/photographers.json"); // Remplace par l'URL correcte
@@ -11,6 +13,8 @@ async function getPhotographerData(photographerId) {
   const medias = datas.media.filter(
     (media) => media.photographerId === photographerId
   );
+  photographerMedias = medias;
+  photographerFolder = photographer[0].folder;
   return { photographer: photographer[0], medias };
 }
 
@@ -38,28 +42,34 @@ async function init() {
       const div = document.createElement("div");
       // const slide = document.querySelector("")
       div.innerHTML = myMedia.getMarkup();
-      const h2 = document.createElement('h2');
+      const h2 = document.createElement("h2");
       h2.textContent = myMedia.title;
       //div.append(h2);
       const likeContainer = document.createElement("div");
-      likeContainer.classList.add('likeContainer');
-      const pLike = document.createElement('p');
+      likeContainer.classList.add("likeContainer");
+      const pLike = document.createElement("p");
       pLike.textContent = myMedia.likes;
-      const heartIcon = document.createElement('i');
-      heartIcon.classList.add('fa-solid', 'fa-heart', 'heartIcon'); 
+      const heartIcon = document.createElement("i");
+      heartIcon.classList.add("fa-solid", "fa-heart", "heartIcon");
       likeContainer.append(pLike, heartIcon);
-      const h2LikeContainer = document.createElement('div');
-      h2LikeContainer.classList.add('h2LikeContainer');
+      const h2LikeContainer = document.createElement("div");
+      h2LikeContainer.classList.add("h2LikeContainer");
       h2LikeContainer.append(h2, likeContainer);
       div.append(h2LikeContainer);
       div.classList.add("grid-item");
-      div.setAttribute('id', myMedia.id);
+      div.dataset.mediaId = m.id;
+      div.setAttribute("id", myMedia.id);
       //div.append(likeContainer);
       mediaContainer.append(div);
     });
+    document.querySelectorAll(".grid-item").forEach((item) => {
+      item.addEventListener("click", (e) => {
+        const id = e.target.closest(".grid-item").dataset.mediaId;
+        displayLightbox(id);
+      });
+    });
     displayDataPage(photographerData.photographer);
     CountLikes();
-
   } else {
     console.log("Aucun ID de photographe trouvé dans l'URL.");
   }
