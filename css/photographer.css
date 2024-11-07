@@ -111,6 +111,57 @@ form input {
   margin-bottom: 0px;
 }
 
+.filter-form-wrapper {
+  margin-top: 9px;
+  margin-left: 100px
+}
+
+.filter-form-wrapper form {
+  flex-direction: row;
+  align-items: center;
+}
+
+.filter-form-wrapper form label {
+  color: #000;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-right: 20px;
+}
+
+form select {
+  font-size: 18px;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 69px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+select option {
+  font-size: 18px;
+
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 69px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
 .photograph-header {
   display: flex;
   flex-direction: row;
@@ -132,7 +183,7 @@ form input {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px 70px;
-  margin-top: 100px;
+  margin-top: 58px;
   margin-left: 100px;
   margin-right: 100px;
 }

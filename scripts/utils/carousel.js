@@ -7,7 +7,7 @@ prevBtn.classList.add("btn");
 nextBtn.classList.add("btn");
 prevBtn.innerHTML = "&#10096;";
 nextBtn.innerHTML = "&#10097;";
-lightboxDiv.append(prevBtn, nextBtn);
+lightbox.append(prevBtn, nextBtn);
 
 const buttons = document.querySelectorAll(".btn");
 //const slides = document.querySelectorAll(".slide");

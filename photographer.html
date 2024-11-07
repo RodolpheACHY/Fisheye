@@ -16,7 +16,9 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="index.html">
+        <img src="assets/images/logo.png" class="logo" />
+      </a>
     </header>
     <main id="main">
       <!--   <div class="photograph-header">
@@ -24,6 +26,16 @@
           Contactez-moi
         </button> 
       </div> -->
+      <div class="filter-form-wrapper">
+        <form class="filter-form" action="#" method="POST">
+          <label for="filter-select">Trier par </label>
+          <select name="filter-select" id="filter-select">
+            <option value="populary">Popularité</option>
+            <option value="date">Date</option>
+            <option value="title">Titre</option>
+          </select>
+        </form>
+      </div>
       <div id="media-container"></div>
     </main>
     <div id="contact_modal">
@@ -40,6 +52,10 @@
           <button class="contact_button">Envoyer</button>
         </form>
       </div>
+    </div>
+    <div id="lightbox" class="lightbox">
+      <img id="lightbox-image" class="lightbox-image" alt="" />
+      <span class="close" onclick="closeLightBox()">&times;</span>
     </div>
     <script src="/scripts/utils/mediaFactory.js"></script>
     <script src="/scripts/templates/photographerPage.js"></script>

@@ -11,7 +11,6 @@ async function getPhotographerData(photographerId) {
   const medias = datas.media.filter(
     (media) => media.photographerId === photographerId
   );
-
   return { photographer: photographer[0], medias };
 }
 
@@ -23,7 +22,7 @@ function displayDataPage(photographer) {
 async function init() {
   // Récupérer l'ID du photographe depuis l'URL
   const urlParams = new URLSearchParams(window.location.search);
-  const photographerId = parseInt(urlParams.get("id")); // Assure-toi que l'URL contient ?id=XX
+  const photographerId = parseInt(urlParams.get("id")); // pour s'assurer que l'URL contient ?id=XX
 
   // Vérifier que l'ID du photographe est bien présent
   if (photographerId) {
