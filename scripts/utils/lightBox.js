@@ -14,12 +14,11 @@ function displayLightbox(id) {
   if (lightbox) {
     lightbox.style.display = "flex";
     lightboxImage.innerHTML = myMedia.getMarkup();
-
-    //setSlideIndex(id);
-    //showSlides();
-    //lightboxImage.src = id;  //met à jour l'image
-    //lightbox.classList.add("active");
   }
+  const lightboxh3 = document.createElement("h3");
+  lightboxh3.textContent = `${myMedia.title}`;
+  lightboxh3.classList.add("lightboxh3");
+  lightboxImage.appendChild(lightboxh3);
 }
 
 function closeLightBox() {
@@ -28,24 +27,12 @@ function closeLightBox() {
 }
 
 const lightbox = document.querySelector(".lightbox");
-
-//const lightboxImage = document.querySelector('.lightbox-image');
-//const closeButton = document.querySelector('.close');
-
-//const lightboxDiv = document.createElement("div"); // modale affichant les médias
 const lightboxClose = document.createElement("img"); //bouton fermeture de la modale
-//const lightImgElement = document.createElement("img"); // image ou vidéo qui s'affiche dans la modale
-//lightboxDiv.classList.add('lightbox');
-//lightboxClose.classList.add('close');
-//lightImgElement.classList.add('lightbox-image');
 lightboxClose.src = "assets/icons/close.svg";
-//const body = document.querySelector("body");
-//lightboxDiv.append(lightboxClose);
-//lightboxDiv.append(lightImgElement);
-//body.append(lightboxDiv);
 lightboxClose.addEventListener("click", function () {
   closeLightBox();
 });
+
 
 // Ajouter les images et vidéos dans la modal
 function populateCarousel(mediaList) {
@@ -82,19 +69,3 @@ items.forEach((item, index) => {
     lightbox.style.display = "flex";
   });
 });
-
-/*
-const gridItems = document.querySelectorAll('.grid-item');   //cible tous les items du user sur la page en cours
-gridItems.forEach(item, index => {
-  item.addEventListener('click', () => {
-    currentIndex = index;
-    console.log("test");
-    const imgSrc = item.querySelector('img').src; //récup la source de l'image
-    displayLightbox(imgSrc);
-    //lightImgElement.src= item.src;
-    //lightbox.style.display = 'flex';
-    //lightboxDiv.style.display = 'flex';
-    
-    
-  });
-}); */

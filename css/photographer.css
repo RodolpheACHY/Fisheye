@@ -208,7 +208,7 @@ select option {
  
   border: 1px solid #ccc;
   border-radius: 5px;
-  z-index: 999;
+  z-index: 5;
   width: 376px;
   flex-shrink: 0;
   display: flex;
@@ -344,71 +344,4 @@ font-weight: 400;
 line-height: normal;
 border-radius: 5px;
 border-style: none;
-}
-
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  /* width: 100%;
-  height: 100%; */
-  width: 1242px;
-height: 900px;
-flex-shrink: 0;
-  background-color: rgba(0,0,0,0.5);
-  justify-content: center;
-  align-items: center;
-  /**********/
-  /*position: absolute;*/
-  /*opacity: 0; /* de base, on les masque, sauf celle qui a l'atrribut active */
-  transition: 0.4s ease-in-out;
-}
-
-.lightbox-image {
-  max-width: 80%;
-  max-height: 80%;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-}
-
-
-#prev {
-  left: 5px;
-}
-
-#next {
-  right: 5px;
-}
-
-.lightbox button {
-  position: absolute; /* pour que les buttons restent dans l'espace de leur parent */
-  background: none;
-  border: none;
-  outline: none;
-  font-size:  2.6rem; /* vu que ce sont des icones, il faut passer par font-size pour les déplacer et non par height comme on le fait d'habitude */
-  z-index: 2;
-  cursor: pointer;
-  color: rgb(243, 241, 241);
-  transform: translateY(-50%);  /* pour placer nos boutons */
-  top: 50%; /* Pa rapport au parent, on se met à 50% */
-}
-
-.lightbox.active {  
-  /* opacity: 1; */
-  display: flex;
-} 
-
-/*.grid-item.active {  
-  opacity: 1; 
-  display: flex;
-}*/
-
-.grid-item {
-  cursor: pointer;
 }

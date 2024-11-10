@@ -42,7 +42,3 @@ async function CountLikes() {
 
   globalCounter.innerHTML = totalCount;
 }
-
-//CountLikes();
-// counter++;
-//counterLike.innerHTML = counter;    // textContent car on ajoute du texte. Si on avait utilisé un p au lieu du h3, il aurait fallu utiliser innerHTML

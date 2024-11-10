@@ -75,5 +75,6 @@ async function init() {
   }
 }
 
+sortMediaByLikes();
 // Appeler la fonction d'initialisation au chargement de la page
 init();
