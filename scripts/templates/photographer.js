@@ -45,4 +45,3 @@ function photographerTemplate(data) {
     }
     return { name, picture, getUserCardDOM }
 }
-

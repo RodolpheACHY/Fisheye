@@ -4,15 +4,36 @@ let photographerFolder = "";
 async function getPhotographerData(photographerId) {
   const response = await fetch("/data/photographers.json"); // Remplace par l'URL correcte
   const datas = await response.json();
+  sortType = document.getElementById('filter-select').value;
 
   const photographer = datas.photographers.filter(
     (p) => p.id === photographerId
   );
 
+  if (!photographer) {
+    throw new Error("Photographe non trouvé");
+  }
+
   // Filtrer les médias pour le photographe spécifique
   const medias = datas.media.filter(
     (media) => media.photographerId === photographerId
   );
+
+  switch (sortType) {
+    case "populary":
+      medias.sort((a, b) => b.likes - a.likes); // Tri décroissant par popularité
+      break;
+    case "date":
+      medias.sort((a, b) => new Date(b.date) - new Date(a.date)); // Tri décroissant par date
+      break;
+    case "title":
+      medias.sort((a, b) => a.title.localeCompare(b.title)); // Tri alphabétique par titre
+      break;
+    default:
+      // Pas de tri si le type n'est pas reconnu
+      break;
+  }
+
   photographerMedias = medias;
   photographerFolder = photographer[0].folder;
   return { photographer: photographer[0], medias };
@@ -30,13 +51,18 @@ async function init() {
 
   // Vérifier que l'ID du photographe est bien présent
   if (photographerId) {
+    const filterSelect = document.getElementById('filter-select');
     // Récupérer les médias du photographe
-    const photographerData = await getPhotographerData(photographerId);
+    let photographerData = await getPhotographerData(photographerId);
+    
+    //Fonction pour afficher les médias 
+    const displayMedias = () => {
     // Afficher les médias dans la console
-    console.log("medias", photographerData.medias);
+    console.log("medias", photographerData.medias);   //photographerData.medias
     const mediaContainer = document.getElementById("media-container");
-    photographerData.medias.forEach((m) => {
-      const myMedia = mediaFactory(m, photographerData.photographer.folder);
+    mediaContainer.innerHTML = ''; // Vider le conteneur
+    photographerData.medias.forEach((m) => {      //photographerData.medias
+      const myMedia = mediaFactory(m, photographerData.photographer.folder);   //photographerData.photographer.folder
       console.log("myMedia", myMedia);
       console.log("myMedia.getMarkup", myMedia.getMarkup());
       const div = document.createElement("div");
@@ -62,19 +88,31 @@ async function init() {
       //div.append(likeContainer);
       mediaContainer.append(div);
     });
+
     document.querySelectorAll(".grid-item").forEach((item) => {
       item.addEventListener("click", (e) => {
         const id = e.target.closest(".grid-item").dataset.mediaId;
         displayLightbox(id);
       });
     });
-    displayDataPage(photographerData.photographer);
-    CountLikes();
+};
+
+
+//Afficher les médias initialement
+displayMedias(photographerData.medias, photographerData.photographer);
+
+// Ajouter l'écouteur d'événements pour le changement de tri
+filterSelect.addEventListener('change', async () => {
+    photographerData = await getPhotographerData(photographerId);
+    displayMedias(photographerData.medias, photographerData.photographer);
+  });
+
+
+  displayDataPage(photographerData.photographer);
+  CountLikes();
   } else {
     console.log("Aucun ID de photographe trouvé dans l'URL.");
   }
 }
-
-sortMediaByLikes();
 // Appeler la fonction d'initialisation au chargement de la page
 init();

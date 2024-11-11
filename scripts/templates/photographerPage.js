@@ -21,7 +21,6 @@ function photographerPageTemplate(data) {
         //const pCountLike = document.createElement('p');
         //pCountLike.textContent = `297666`
         const containerH2Paragraph = document.createElement('div');
-        //const article = document.createElement( 'article' );
         const divImg = document.createElement('div');
         const img = document.createElement( 'img' );
         img.setAttribute("alt", `${name} - page photographe de ${name}`);

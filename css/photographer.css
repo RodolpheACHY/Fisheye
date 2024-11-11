@@ -249,27 +249,19 @@ select option {
   margin-bottom: 0;
 }
 
-/* slide c'est pour le carousel :*/
- .slide {
-  position: absolute;
-  height: 100%; /* c-a-d 100% de son parent, ce qui signifie ici 100% de 100vh (viewport height, la taille de l'écran de l'utilisateur.) */
-  width: 100%; /* pareil mais pour la width. On tape un raccourci w100 pour width:100% */
-  opacity: 0; /* de base, on les masque, sauf celle qui a l'atrribut active */
-  transition: 0.4s ease-in-out;
+#filter-select option { 
+  position: relative; 
 } 
 
-.slide.active {
-  /* sans espace, c-a-d que la balise a les 2 classes. avec un space, ça signifierait une un element avec la balise active dont la parent a la classe slide */
-  opacity: 1;
-}
-
-.slide img {
-  display: block;
-  height: 100%; /* prend 50% de son parent en hauteur*/
-  width: 100%;
-  object-fit: cover;
-}
-
+#filter-select option:not(:last-child)::after { 
+  content: ''; 
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  width: 80%; 
+  height: 1px; 
+  background-color: white; 
+} 
 
 .h2LikeContainer {
   display: flex;
