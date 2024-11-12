@@ -101,6 +101,9 @@ async function init() {
 //Afficher les médias initialement
 displayMedias(photographerData.medias, photographerData.photographer);
 
+// Afficher le nom du photographe 
+displayPhotographerName(photographerData.photographer.name);
+
 // Ajouter l'écouteur d'événements pour le changement de tri
 filterSelect.addEventListener('change', async () => {
     photographerData = await getPhotographerData(photographerId);

@@ -1,4 +1,4 @@
-function sortMediaByLikes() {
+function sortByPopularity() {
     const sortSelect = document.getElementById('filter-select');
     console.log("sortSelect: ", sortSelect);
     sortSelect.addEventListener("change", function () {

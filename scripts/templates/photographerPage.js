@@ -48,6 +48,7 @@ function photographerPageTemplate(data) {
         const buttonContact = document.createElement("button");
         buttonContact.classList.add("contact_button");
         buttonContact.textContent = "Contactez-moi";
+        buttonContact.setAttribute("alt", "Contact Me");
         buttonContact.addEventListener('click', function() {
             displayModal();
         });
