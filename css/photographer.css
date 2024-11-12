@@ -8,22 +8,11 @@
   margin: 0 100px;
 }
 
-.photograph-header button {
-  font-size: 20px;
-  color: white;
-  padding: 11px;
-  width: 170px;
-  height: 70px;
-  border: none;
-  background-color: #901c1c;
-  border-radius: 5px;
-  cursor: pointer;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
+
 
 #contact_modal .modal {
+  position: relative;
+  height: 85vh;
   border-radius: 5px;
   background-color: #db8876;
   width: 50%;
@@ -34,9 +23,14 @@
   padding: 35px;
   margin: auto;
   margin-top: 35px;
-  z-index:20;
+  z-index: 20;
   top: 0;
   overflow: auto;
+}
+#contact_modal .close-modal-contact {
+  position: absolute;
+  right: 20px;
+  top: 10px;
 }
 
 .modal header {
@@ -46,17 +40,18 @@
 
 .modal header img {
   cursor: pointer;
-  color: #FFFFFF
+  color: #ffffff;
 }
 
-.modal header h2, header span {
+.modal header h2,
+header span {
   font-size: 64px;
   font-weight: normal;
   text-align: center;
 }
 
 header .h2Name {
-  display: block; 
+  display: block;
   margin-top: 10px;
 }
 
@@ -123,7 +118,7 @@ form input {
 
 .filter-form-wrapper {
   margin-top: 9px;
-  margin-left: 100px
+  margin-left: 100px;
 }
 
 .filter-form-wrapper form {
@@ -257,32 +252,31 @@ select option {
   margin-bottom: 0;
 }
 
-#filter-select option { 
-  position: relative; 
-} 
+#filter-select option {
+  position: relative;
+}
 
-#filter-select option:not(:last-child)::after { 
-  content: ''; 
-  position: absolute; 
-  bottom: 0; 
-  left: 0; 
-  width: 80%; 
-  height: 1px; 
-  background-color: white; 
-} 
+#filter-select option:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  height: 1px;
+  background-color: white;
+}
 
 .h2LikeContainer {
   display: flex;
   justify-content: space-between;
-  color: #901C1C;
+  color: #901c1c;
   font-weight: normal;
 }
 
 .likeContainer {
   display: flex;
-  justify-content:flex-start;
-  align-items:center;
-  
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .heartIcon {
@@ -309,39 +303,52 @@ p {
   margin-bottom: 0px;
 }
 
-.contact_button {
+.contact_button, .lightbox .contact_button {
+  font-size: 20px ;
+  opacity: 1 ;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901c1c ;
+  border-radius: 5px;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
   width: 170px;
   height: 69px;
   flex-shrink: 0;
   border-radius: 5px;
   border-style: none;
-  background-color: #901C1C;
-  color: #FFF;
+  background-color: #901c1c;
+  color: #fff ;
   text-align: center;
   font-family: "DM Sans";
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-
 }
 
 input {
-color: #312E2E;
-font-family: "DM Sans";
-font-size: 36px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  color: #312e2e;
+  font-family: "DM Sans";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 #message {
-color: #312E2E;
-font-family: "DM Sans";
-font-size: 36px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-border-radius: 5px;
-border-style: none;
+  color: #312e2e;
+  font-family: "DM Sans";
+  width: 100%;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 5px;
+  border-style: none;
 }

@@ -9,10 +9,10 @@ function closeModal() {
 }
 
 function displayPhotographerName(name) { 
-  const containerModalHeaderFrom = document.querySelector(".modal header"); 
+  //const containerModalHeaderFrom = document.querySelector(".modal header"); 
   const h2Name = document.querySelector(".h2Name");
   h2Name.textContent = name; 
-  containerModalHeaderFrom.appendChild(h2Name);
+  // containerModalHeaderFrom.appendChild(h2Name);
 }
 
 // DOM Elements
