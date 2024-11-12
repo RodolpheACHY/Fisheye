@@ -9,7 +9,7 @@ function displayLightbox(id) {
   console.log("m", m);
   const myMedia = mediaFactory(m, photographerFolder);
   console.log("myMedia", myMedia.getMarkup());
-  const lightbox = document.querySelector(".lightbox");
+  const lightbox = document.querySelector("#lightbox");
   const lightboxImage = document.querySelector(".lightbox-image");
   if (lightbox) {
     lightbox.style.display = "flex";
@@ -22,11 +22,11 @@ function displayLightbox(id) {
 }
 
 function closeLightBox() {
-  const lightbox = document.querySelector(".lightbox");
+  const lightbox = document.querySelector("#lightbox");
   lightbox.style.display = "none";
 }
 
-const lightbox = document.querySelector(".lightbox");
+const lightbox = document.querySelector("#lightbox");
 const lightboxClose = document.createElement("img"); //bouton fermeture de la modale
 lightboxClose.src = "assets/icons/close.svg";
 lightboxClose.addEventListener("click", function () {
