@@ -1,11 +1,18 @@
 function displayModal() {
   const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
+  // Déplacer le focus vers le modal pour les utilisateurs de lecteurs d'écran
+  modal.setAttribute('aria-hidden', 'false');
+  modal.focus();
 }
 
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
+    // Restaurer le focus vers l'élément déclencheur après la fermeture du modal
+    modal.setAttribute('aria-hidden', 'false');
+    const trigger = document.querySelector("[data-trigger='contact_modal']");
+    if (trigger) trigger.focus();
 }
 
 function displayPhotographerName(name) { 
@@ -30,7 +37,7 @@ const inputPrenom = document.createElement("input");
 inputPrenom.type = 'text';
 inputPrenom.id = 'prenom';
 // Associer le label à l'input
-labelPrenom.htmlFor = inputPrenom.id;
+labelPrenom.setAttribute("for", inputPrenom.id);
 divModal.appendChild(labelPrenom);
 divModal.appendChild(inputPrenom);
 
@@ -40,7 +47,7 @@ const inputNom = document.createElement("input");
 inputNom.type = 'text';
 inputNom.id = 'nom';
 // Associer le label à l'input
-labelNom.htmlFor = inputNom.id;
+labelNom.setAttribute("for", inputNom.id);
 divModal.appendChild(labelNom);
 divModal.appendChild(inputNom);
 
@@ -53,7 +60,7 @@ inputEmail.id = "email"
 inputEmail.name = "email"
 inputEmail.required = true;
 // Associer le label à l'input
-labelEmail.htmlFor = inputEmail.id;
+labelEmail.setAttribute("for", inputEmail.id);
 divModal.appendChild(labelEmail);
 divModal.appendChild(inputEmail);
 
@@ -66,7 +73,7 @@ inputTextarea.name ="message";
 inputTextarea.rows = 3;
 inputTextarea.cols = 35;
 // Associer le label à l'input
-labelTextaera.htmlFor = inputTextarea.id;
+labelTextaera.setAttribute("for", inputTextarea.id);
 divModal.appendChild(labelTextaera);
 divModal.appendChild(inputTextarea);
 
@@ -89,3 +96,4 @@ form.addEventListener('submit', (event) => {
   };
   console.log('Données du formulaire:', formData);
 });
+
