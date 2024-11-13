@@ -18,6 +18,7 @@ function displayLightbox(id) {
   const lightboxh3 = document.createElement("h3");
   lightboxh3.textContent = `${myMedia.title}`;
   lightboxh3.classList.add("lightboxh3");
+  lightboxh3.id ="lightbox_label";
   lightboxImage.appendChild(lightboxh3);
 }
 
