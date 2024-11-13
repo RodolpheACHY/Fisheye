@@ -65,27 +65,39 @@ async function init() {
       const myMedia = mediaFactory(m, photographerData.photographer.folder);   //photographerData.photographer.folder
       console.log("myMedia", myMedia);
       console.log("myMedia.getMarkup", myMedia.getMarkup());
+      
       const div = document.createElement("div");
       // const slide = document.querySelector("")
       div.innerHTML = myMedia.getMarkup();
+      div.setAttribute("aria-label", `Media item titled ${myMedia.title}`);
+
       const h2 = document.createElement("h2");
       h2.textContent = myMedia.title;
-      //div.append(h2);
+      h2.setAttribute("aria-label", `Title: ${myMedia.title}`);
+
       const likeContainer = document.createElement("div");
       likeContainer.classList.add("likeContainer");
+
       const pLike = document.createElement("p");
       pLike.textContent = myMedia.likes;
+      pLike.setAttribute("aria-label", `Likes: ${myMedia.likes}`)
+
       const heartIcon = document.createElement("i");
       heartIcon.classList.add("fa-solid", "fa-heart", "heartIcon");
+
       likeContainer.append(pLike, heartIcon);
+
       const h2LikeContainer = document.createElement("div");
       h2LikeContainer.classList.add("h2LikeContainer");
       h2LikeContainer.append(h2, likeContainer);
+
       div.append(h2LikeContainer);
       div.classList.add("grid-item");
       div.dataset.mediaId = m.id;
       div.setAttribute("id", myMedia.id);
-      //div.append(likeContainer);
+      // Adding tabindex for keyboard navigation
+      div.setAttribute("tabindex", "0");
+      
       mediaContainer.append(div);
     });
 

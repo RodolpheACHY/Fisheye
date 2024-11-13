@@ -26,16 +26,19 @@ function photographerTemplate(data) {
         const pCityCountry = document.createElement( 'p' );
         pCityCountry.textContent = `${city}, ${country}`;
         pCityCountry.classList.add("pCityCountry");
+        pCityCountry.setAttribute("aria-label", `Location: ${city}, ${country}`);
         aLink.appendChild(pCityCountry);
 
         const pTagline = document.createElement( 'p' );
         pTagline.textContent = tagline;
         pTagline.classList.add("pTagline");
+        pTagline.setAttribute("aria-label", `Tagline: ${tagline}`);
         aLink.appendChild(pTagline);
 
         const pPrice = document.createElement( 'p' )
         pPrice.textContent = `${price}€/jour`;
         pPrice.classList.add("pPrice");
+        pPrice.setAttribute("aria-label", `Price: ${price} euros per day`);
         aLink.appendChild(pPrice);
 
         const imgLogoHeader = document.querySelector(".logo");

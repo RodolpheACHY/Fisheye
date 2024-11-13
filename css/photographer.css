@@ -27,15 +27,19 @@
   top: 0;
   overflow: auto;
 }
-#contact_modal .close-modal-contact {
+
+#contact_modal .modal .close-modal-contact {
   position: absolute;
   right: 20px;
-  top: 10px;
+  top: 30px;
+  cursor: pointer;
+  z-index: 10
 }
 
 .modal header {
   justify-content: space-between;
   width: 100%;
+  height: 130px;
 }
 
 .modal header img {
@@ -47,7 +51,9 @@
 header span {
   font-size: 64px;
   font-weight: normal;
-  text-align: center;
+  text-align:left;
+  position: relative;
+  top: -30px;
 }
 
 header .h2Name {
@@ -153,7 +159,6 @@ form select {
 
 select option {
   font-size: 18px;
-
   color: white;
   padding: 11px;
   width: 170px;
@@ -172,8 +177,6 @@ select option {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  /* height: 100%; */
-  /*width: 100%;*/
 }
 
 .photograph-header .h2-paragraph {
