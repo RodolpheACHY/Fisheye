@@ -14,6 +14,9 @@ function displayLightbox(id) {
   if (lightbox) {
     lightbox.style.display = "flex";
     lightboxImage.innerHTML = myMedia.getMarkup();
+    lightbox.setAttribute("aria-hidden", "false");
+    lightbox.setAttribute("role", "dialog");
+    lightboxImage.setAttribute("aria-labelledby", "lightbox_label");
   }
   const lightboxh3 = document.createElement("h3");
   lightboxh3.textContent = `${myMedia.title}`;
@@ -25,11 +28,13 @@ function displayLightbox(id) {
 function closeLightBox() {
   const lightbox = document.querySelector("#lightbox");
   lightbox.style.display = "none";
+  lightbox.setAttribute("aria-hidden", "true");
 }
 
 const lightbox = document.querySelector("#lightbox");
 const lightboxClose = document.createElement("img"); //bouton fermeture de la modale
 lightboxClose.src = "assets/icons/close.svg";
+lightboxClose.setAttribute("alt", "");
 lightboxClose.addEventListener("click", function () {
   closeLightBox();
 });
@@ -58,6 +63,8 @@ function showItem(index) {
   const items = document.querySelectorAll(".grid-item");
   items.forEach((item) => item.classList.remove("active"));
   items[index].classList.add("active");
+  items[index].setAttribute("tabindex", "0"); // Rendre l'élément actif focusable via le clavier 
+  items[index].focus(); // Déplacer le focus vers l'élément actif
 }
 
 // Ouverture de la modal au clic sur un élément média
