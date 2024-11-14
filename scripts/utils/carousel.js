@@ -1,9 +1,13 @@
 prevBtn = document.createElement("button");
-nextBtn = document.createElement("button");
 prevBtn.id = "prev";
-nextBtn.id = "next";
 prevBtn.classList.add("btn");
+prevBtn.setAttribute("aria-label", "Previous Image");
+
+nextBtn = document.createElement("button");
+nextBtn.id = "next";
 nextBtn.classList.add("btn");
+nextBtn.setAttribute("aria-label", "Next Image");
+
 lightbox.append(prevBtn, nextBtn);
 
 const buttons = document.querySelectorAll(".btn");
