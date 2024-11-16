@@ -24,6 +24,7 @@ function displayPhotographerName(name) {
 
 // DOM Elements
 const form = document.querySelector("form");
+form.setAttribute('method', 'dialog');
 const divModal = document.querySelector('form div');
 divModal.classList.add("divModal");
 
@@ -81,6 +82,8 @@ divModal.appendChild(inputTextarea);
 //envoi des données du formulaire 
 form.addEventListener('submit', (event) => {
   event.preventDefault(); // Empêche le rechargement de la page
+  event.stopPropagation(); // Arrête la propagation de l'événement
+  console.log('Formulaire soumis');
 
   const prenomValue = inputPrenom.value;
   const nameValue = inputNom.value;
@@ -95,5 +98,6 @@ form.addEventListener('submit', (event) => {
     votre_message : inputTextaeraValue
   };
   console.log('Données du formulaire:', formData);
+  closeModal();
 });
 

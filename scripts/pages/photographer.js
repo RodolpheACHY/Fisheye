@@ -69,11 +69,11 @@ async function init() {
       const div = document.createElement("div");
       // const slide = document.querySelector("")
       div.innerHTML = myMedia.getMarkup();
-      div.setAttribute("aria-label", `Media item titled ${myMedia.title}`);
+      div.setAttribute("aria-label", `Media intitulé: ${myMedia.title}`);
 
       const h2 = document.createElement("h2");
       h2.textContent = myMedia.title;
-      h2.setAttribute("aria-label", `Title: ${myMedia.title}`);
+      h2.setAttribute("aria-label", `Titre: ${myMedia.title}`);
 
       const likeContainer = document.createElement("div");
       likeContainer.classList.add("likeContainer");
@@ -107,6 +107,14 @@ async function init() {
       item.addEventListener("click", (e) => {
         const id = e.target.closest(".grid-item").dataset.mediaId;
         displayLightbox(id);
+      });
+
+      item.addEventListener("keydown", (e) => { 
+        if (e.key === "Enter" || e.key === " ") { // Vérifier les touches"Enter" et "Space"
+          e.preventDefault(); // Empêcher le comportement par défaut 
+          const id = e.target.closest(".grid-item").dataset.mediaId; 
+          displayLightbox(id); 
+        }     
       });
     });
 };
