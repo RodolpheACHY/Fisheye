@@ -82,7 +82,9 @@ async function init() {
       pLike.textContent = myMedia.likes;
       pLike.setAttribute("aria-label", `Likes: ${myMedia.likes}`)
 
-      const heartIcon = document.createElement("i");
+      //const heartIcon = document.createElement("i");
+      // const heartIcon = document.createElement("span");  ok pour le span 
+      const heartIcon = document.createElement("button");
       heartIcon.classList.add("fa-solid", "fa-heart", "heartIcon");
 
       likeContainer.append(pLike, heartIcon);
@@ -96,7 +98,7 @@ async function init() {
       div.dataset.mediaId = m.id;
       div.setAttribute("id", myMedia.id);
       // Adding tabindex for keyboard navigation
-      div.setAttribute("tabindex", "0");
+      //div.setAttribute("tabindex", "0");
       
       mediaContainer.append(div);
     });

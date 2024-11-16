@@ -38,11 +38,11 @@ function photographerTemplate(data) {
         const pPrice = document.createElement( 'p' )
         pPrice.textContent = `${price}€/jour`;
         pPrice.classList.add("pPrice");
-        pPrice.setAttribute("aria-label", `Price: ${price} euros per day`);
+        pPrice.setAttribute("aria-label", `Prix: ${price} euros par jour`);
         aLink.appendChild(pPrice);
 
-        const imgLogoHeader = document.querySelector(".logo");
-        imgLogoHeader.setAttribute("role", "img");
+        //const imgLogoHeader = document.querySelector(".logo");
+        //imgLogoHeader.setAttribute("role", "img");
         
         return (article);
     }

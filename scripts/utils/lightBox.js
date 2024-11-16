@@ -34,7 +34,7 @@ function closeLightBox() {
 const lightbox = document.querySelector("#lightbox");
 const lightboxClose = document.createElement("img"); //bouton fermeture de la modale
 lightboxClose.src = "assets/icons/close.svg";
-lightboxClose.setAttribute("alt", "");
+lightboxClose.setAttribute("alt", "Ferme la lightbox");
 lightboxClose.addEventListener("click", function () {
   closeLightBox();
 });

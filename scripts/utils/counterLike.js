@@ -16,7 +16,7 @@ async function CountLikes() {
     totalCount += c;
 
     // Ajouter un attribut aria-pressed pour indiquer l'état du bouton 
-    heartIcon.setAttribute("role", "button"); 
+    // heartIcon.setAttribute("role", "button"); 
     heartIcon.setAttribute("aria-pressed", "false"); 
     heartIcon.setAttribute("tabindex", "0"); // Ajouter tabindex pour la navigation au clavier
 

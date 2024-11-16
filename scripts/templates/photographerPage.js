@@ -18,8 +18,8 @@ function photographerPageTemplate(data) {
         containerCountLike.setAttribute("role", "status");
         containerCountLike.setAttribute("aria-label", "Nombre total de likes");
         containerCountLike.innerHTML = `
-                                <p>297 666</p>
-                                <i class="fa-solid fa-heart"></i>
+                                <p></p>
+                                <span class="fa-solid fa-heart"></span>
                                 `;
 
         const containerH2Paragraph = document.createElement('div');
@@ -49,15 +49,15 @@ function photographerPageTemplate(data) {
 
         containerH2Paragraph.dataset.id = data.id;
 
-        const imgLogoHeader = document.querySelector(".logo");
-        imgLogoHeader.setAttribute("role", "img");
+        //const imgLogoHeader = document.querySelector(".logo");
+        //imgLogoHeader.setAttribute("role", "img");
 
         divImg.appendChild(img);
 
         const buttonContact = document.createElement("button");
         buttonContact.classList.add("contact_button");
         buttonContact.textContent = "Contactez-moi";
-        buttonContact.setAttribute("aria-label", "Contact Me");
+        //buttonContact.setAttribute("aria-label", "Contact Me");
         buttonContact.addEventListener('click', function() {
             displayModal();
         });

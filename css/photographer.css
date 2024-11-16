@@ -282,10 +282,13 @@ select option {
   align-items: center;
 }
 
-.heartIcon {
+.likeContainer .heartIcon {
   margin-left: 0.2em;
   /*margin-top: -22px;*/
   font-size: 1.5em;
+  border: none;
+  background: transparent;
+  color: #901c1c;
 }
 
 h2 {
