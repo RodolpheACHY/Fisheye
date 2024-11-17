@@ -97,7 +97,32 @@ form.addEventListener('submit', (event) => {
     email: emailValue,
     votre_message : inputTextaeraValue
   };
+  form.reset();
   console.log('Données du formulaire:', formData);
-  closeModal();
+  
+  //closeModal();
 });
 
+const contactBtn = document.querySelector(".contact_button")
+contactBtn.addEventListener("click", e => {
+  e.preventDefault();
+
+  const formData = {
+    prenom: document.getElementById('prenom').value,
+    nom: document.getElementById('nom').value,
+    email: document.getElementById('email').value,
+    votre_message: document.getElementById('message').value
+  };
+  form.reset();
+  console.log('Données du formulaire:', formData);
+  
+  //closeModal();
+
+  }
+)
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+});
