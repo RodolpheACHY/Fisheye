@@ -97,15 +97,30 @@ form.addEventListener('submit', (event) => {
     email: emailValue,
     votre_message : inputTextaeraValue
   };
-  form.reset();
-  console.log('Données du formulaire:', formData);
+
   
-  //closeModal();
+  if (formData.prenom === "" || formData.nom === "" || formData.email === "" || formData.votre_message === "") {
+    alert("Veuillez saisir tous les champs svp");
+  } else {
+    e.preventDefault();
+    console.log('Données du formulaire:', formData);
+    closeModal();
+    document.querySelectorAll('form input, form textarea').forEach(input => input.value = '');
+  } 
+
+  /*  
+  console.log(form);
+  //form.reset();
+  console.log('Données du formulaire:', formData);
+  closeModal();
+  document.querySelectorAll('form input, form textarea').forEach(input => input.value = ''); */
 });
 
 const contactBtn = document.querySelector(".contact_button")
 contactBtn.addEventListener("click", e => {
   e.preventDefault();
+  event.stopPropagation(); // Arrête la propagation de l'événement
+  console.log('Formulaire soumis');
 
   const formData = {
     prenom: document.getElementById('prenom').value,
@@ -113,11 +128,20 @@ contactBtn.addEventListener("click", e => {
     email: document.getElementById('email').value,
     votre_message: document.getElementById('message').value
   };
-  form.reset();
-  console.log('Données du formulaire:', formData);
-  
-  //closeModal();
 
+
+  if (formData.prenom === "" || formData.nom === "" || formData.email === "" || formData.votre_message === "") {
+    alert("Veuillez saisir tous les champs svp");
+  } else {
+    e.preventDefault();
+    console.log('Données du formulaire:', formData);
+    closeModal();
+    document.querySelectorAll('form input, form textarea').forEach(input => input.value = '');
+  } 
+  /*form.reset();
+  console.log('Données du formulaire:', formData);
+  closeModal();
+  document.querySelectorAll('form input, form textarea').forEach(input => input.value = ''); */
   }
 )
 

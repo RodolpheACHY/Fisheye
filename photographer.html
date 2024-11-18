@@ -40,12 +40,6 @@
       aria-hidden="true"
     >
       <div class="modal">
-        <img
-          src="assets/icons/close_form.svg"
-          onclick="closeModal()"
-          class="close-modal-contact"
-          alt="Ferme la fenêtre"
-        />
         <header>
           <h2 id="contact_modal_label">
             Contactez-moi <br />
@@ -59,9 +53,16 @@
           </div>
           <button type="submit" class="contact_button">Envoyer</button>
         </form>
+        <img
+          src="assets/icons/close_form.svg"
+          onclick="closeModal()"
+          class="close-modal-contact"
+          alt="Ferme la fenêtre"
+          tabindex="0"
+        />
       </div>
     </dialog>
-    <div
+    <dialog
       id="lightbox"
       class="lightbox"
       role="dialog"
@@ -74,7 +75,7 @@
         onclick="closeLightBox()"
         aria-label="ferme la lightbox"
       ></button>
-    </div>
+    </dialog>
     <script src="/scripts/utils/mediaFactory.js"></script>
     <script src="/scripts/templates/photographerPage.js"></script>
     <script src="/scripts/pages/photographer.js" defer></script>

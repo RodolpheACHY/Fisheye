@@ -17,6 +17,7 @@ function displayLightbox(id) {
     lightbox.setAttribute("aria-hidden", "false");
     lightbox.setAttribute("role", "dialog");
     lightboxImage.setAttribute("aria-labelledby", "lightbox_label");
+    lightbox.focus();
   }
   const lightboxh3 = document.createElement("h3");
   lightboxh3.textContent = `${myMedia.title}`;
@@ -76,4 +77,10 @@ items.forEach((item, index) => {
     showItem(currentIndex);
     lightbox.style.display = "flex";
   });
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeLightBox();
+  }
 });

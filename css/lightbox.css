@@ -1,4 +1,8 @@
 
+#lighbox {
+    border: none;
+}
+
 .lightbox {
     display: none;
     position: fixed;
@@ -103,7 +107,7 @@
       transform: rotate(180deg);
 } 
   
-  .lightbox.active {  
+.lightbox.active {  
     /* opacity: 1; */
     display: flex;
 } 
