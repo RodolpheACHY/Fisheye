@@ -21,6 +21,7 @@
     height: 90%;
     width: 100%;
     margin: auto;
+    position: relative;
   }
   .lightbox-image .lightboxh3 {
     color: #901c1c;
@@ -32,7 +33,10 @@
     margin: auto;
     width: 80%;
     margin-top: 1rem;
-    text-align: center;
+    /* text-align: center; */
+    left: 30%;
+    position: absolute;
+    top: 94%;
   }
   .lightbox-image img,
   .lightbox-image video {
@@ -74,12 +78,12 @@
     cursor: pointer;
   }
   .lightbox .close {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 30%;
     background: url(../assets/icons/close.svg) center center / 100% 100% no-repeat;
     position: fixed;
-    top: 20px;
-    right: 10px;
+    top: 0;
+    right: 22%;
     z-index: 12;
   }
   @keyframes lightboxIn {

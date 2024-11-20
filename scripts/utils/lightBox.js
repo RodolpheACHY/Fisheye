@@ -13,6 +13,7 @@ function displayLightbox(id) {
   const lightboxImage = document.querySelector(".lightbox-image");
   if (lightbox) {
     lightbox.style.display = "flex";
+    //lightbox.showModal();
     lightboxImage.innerHTML = myMedia.getMarkup();
     lightbox.setAttribute("aria-hidden", "false");
     lightbox.setAttribute("role", "dialog");

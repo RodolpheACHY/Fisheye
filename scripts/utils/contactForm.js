@@ -1,6 +1,7 @@
 function displayModal() {
   const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
+  //modal.showModal();
   // Déplacer le focus vers le modal pour les utilisateurs de lecteurs d'écran
   modal.setAttribute('aria-hidden', 'false');
   modal.focus();
@@ -8,11 +9,15 @@ function displayModal() {
 
 function closeModal() {
     const modal = document.getElementById("contact_modal");
-    modal.style.display = "none";
+        modal.style.display = "none";
+  // modal.close();
     // Restaurer le focus vers l'élément déclencheur après la fermeture du modal
     modal.setAttribute('aria-hidden', 'false');
-    const trigger = document.querySelector("[data-trigger='contact_modal']");
-    if (trigger) trigger.focus();
+    //const trigger = document.querySelector("[data-trigger='contact_modal']");
+    if (activeTrigger) {
+      activeTrigger.focus();
+      activeTrigger =null;
+    } 
 }
 
 function displayPhotographerName(name) { 
@@ -97,15 +102,15 @@ form.addEventListener('submit', (event) => {
     email: emailValue,
     votre_message : inputTextaeraValue
   };
-
   
   if (formData.prenom === "" || formData.nom === "" || formData.email === "" || formData.votre_message === "") {
     alert("Veuillez saisir tous les champs svp");
   } else {
-    e.preventDefault();
+    event.preventDefault();
     console.log('Données du formulaire:', formData);
     closeModal();
     document.querySelectorAll('form input, form textarea').forEach(input => input.value = '');
+    alert("Votre formulaire a bien été envoyé");
   } 
 
   /*  
@@ -119,7 +124,7 @@ form.addEventListener('submit', (event) => {
 const contactBtn = document.querySelector(".contact_button")
 contactBtn.addEventListener("click", e => {
   e.preventDefault();
-  event.stopPropagation(); // Arrête la propagation de l'événement
+  e.stopPropagation(); // Arrête la propagation de l'événement
   console.log('Formulaire soumis');
 
   const formData = {
@@ -137,6 +142,7 @@ contactBtn.addEventListener("click", e => {
     console.log('Données du formulaire:', formData);
     closeModal();
     document.querySelectorAll('form input, form textarea').forEach(input => input.value = '');
+    alert("Votre formulaire a bien été envoyé");
   } 
   /*form.reset();
   console.log('Données du formulaire:', formData);
@@ -150,3 +156,41 @@ document.addEventListener('keydown', function(event) {
     closeModal();
   }
 });
+
+const BtnFormCloseKeyb = document.querySelector(".close-modal-contact"); //bouton fermeture de la modale
+BtnFormCloseKeyb.addEventListener("keydown", function (e) {
+  if (e.key === 'Space' || e.key === 'Enter') {
+    closeModal();
+  }
+});
+
+document.querySelectorAll(".grid-item").forEach((item) => {
+  if(!item.hasAttribute("data-trigger")) {
+    item.setAttribute("data-trigger", "contact_modal");
+    item.addEventListener("click", function (event) {
+        activeTrigger = event.currentTarget; // Sauvegarde du trigger
+        displayModal();
+    });
+  }
+});
+
+let activeTrigger = null;
+
+
+/*
+(function () {
+  //on définie les events qu'on veut regarder
+  const events = ["click", "keydown", "keyup", "mousedown", "mouseup", "focus"];
+
+  // fonction qui log l'élément qui est focus
+  function handleEvent() {
+    const focusedElement = document.activeElement;
+    console.log("Focused Element:", focusedElement);
+    return focusedElement;
+  }       
+
+  //on ajoute les event listener à la page
+  events.forEach((eventType) => {
+    document.addEventListener(eventType, handleEvent);
+  });
+})(); */

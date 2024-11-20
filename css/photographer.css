@@ -2,6 +2,11 @@
   display: none;
   border: none;
   background: rgba(196, 196, 196, 0.4);
+  /*position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;*/
 }
 .photograph-header {
   background-color: #fafafa;
@@ -177,9 +182,10 @@ select option {
 #media-container div video,
 #media-container div img {
   width: 100%;
-  height: 450px;
+  height: 300px;
   flex-shrink: 0;
   object-fit: cover;
+  max-height: 80vh;
 }
 .floating-element {
   position: fixed;
