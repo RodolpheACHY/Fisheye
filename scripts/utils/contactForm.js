@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
+// eslint-disable-next-line no-unused-vars
 function displayModal() {
   const modal = document.getElementById("contact_modal");
 	//modal.style.display = "block";
@@ -16,6 +15,7 @@ function closeModal() {
     modal.setAttribute('aria-hidden', 'false');
 }
 
+// eslint-disable-next-line no-unused-vars
 function displayPhotographerName(name) { 
   const h2Name = document.querySelector(".h2Name");
   h2Name.textContent = name; 
