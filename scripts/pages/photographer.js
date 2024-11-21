@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 let photographerMedias = [];
 let photographerFolder = "";
 //Mettre le code JavaScript lié à la page photographer.html

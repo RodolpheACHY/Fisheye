@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+// eslint-disable-next-line no-unused-vars
 function photographerPageTemplate(data) {
     const { name, id, city, country, tagline, price, portrait, likes, title } = data;
 
@@ -48,9 +51,6 @@ function photographerPageTemplate(data) {
         pPrice.classList.add("pPrice");
 
         containerH2Paragraph.dataset.id = data.id;
-
-        //const imgLogoHeader = document.querySelector(".logo");
-        //imgLogoHeader.setAttribute("role", "img");
 
         divImg.appendChild(img);
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 function photographerTemplate(data) {
     const { name, id, city, country, tagline, price, portrait } = data;
 
@@ -41,9 +42,6 @@ function photographerTemplate(data) {
         pPrice.setAttribute("aria-label", `Prix: ${price} euros par jour`);
         aLink.appendChild(pPrice);
 
-        //const imgLogoHeader = document.querySelector(".logo");
-        //imgLogoHeader.setAttribute("role", "img");
-        
         return (article);
     }
     return { name, picture, getUserCardDOM }

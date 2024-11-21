@@ -1,5 +1,5 @@
 #contact_modal {
-  display: none;
+  /*display: none;*/   /* car j'utilise showModal */
   border: none;
   background: rgba(196, 196, 196, 0.4);
   /*position: fixed;

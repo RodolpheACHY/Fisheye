@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 async function CountLikes() {
   console.log("CountLikes");
   const heartIcons = document.querySelectorAll(".heartIcon");

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 prevBtn = document.createElement("button");
 prevBtn.id = "prev";
 prevBtn.classList.add("btn");

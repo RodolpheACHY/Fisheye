@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const mediaFactory = function (media, folder) {
   const { video, image, title, ...rest } = media;
   console.log("folder", folder);

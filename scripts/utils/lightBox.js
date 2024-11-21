@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 let currentIndex = 0;
 
 function displayLightbox(id) {
@@ -12,8 +14,8 @@ function displayLightbox(id) {
   const lightbox = document.querySelector("#lightbox");
   const lightboxImage = document.querySelector(".lightbox-image");
   if (lightbox) {
-    lightbox.style.display = "flex";
-    //lightbox.showModal();
+    //lightbox.style.display = "flex";
+    lightbox.showModal();
     lightboxImage.innerHTML = myMedia.getMarkup();
     lightbox.setAttribute("aria-hidden", "false");
     lightbox.setAttribute("role", "dialog");
@@ -29,12 +31,14 @@ function displayLightbox(id) {
 
 function closeLightBox() {
   const lightbox = document.querySelector("#lightbox");
-  lightbox.style.display = "none";
+  //lightbox.style.display = "none";
+  lightbox.close();
   lightbox.setAttribute("aria-hidden", "true");
 }
 
+//bouton fermeture de la modale
 const lightbox = document.querySelector("#lightbox");
-const lightboxClose = document.createElement("img"); //bouton fermeture de la modale
+const lightboxClose = document.createElement("img"); 
 lightboxClose.src = "assets/icons/close.svg";
 lightboxClose.setAttribute("alt", "Ferme la lightbox");
 lightboxClose.addEventListener("click", function () {

@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 function sortByPopularity() {
   const sortSelect = document.getElementById("filter-select");
   console.log("sortSelect: ", sortSelect);
