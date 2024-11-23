@@ -3,16 +3,14 @@ function displayModal() {
   const modal = document.getElementById("contact_modal");
 	//modal.style.display = "block";
   modal.showModal();
-  // Déplacer le focus vers le modal pour les utilisateurs de lecteurs d'écran
+  // Déplacer le focus vers la modale pour les utilisateurs de lecteurs d'écran
   modal.setAttribute('aria-hidden', 'false');
-  modal.focus();
 }
 
 function closeModal() {
-    const modal = document.getElementById("contact_modal");
-    //modal.style.display = "none";
-    modal.close();
-    modal.setAttribute('aria-hidden', 'false');
+  const modal = document.getElementById("contact_modal");
+  modal.close();
+  modal.setAttribute('aria-hidden', 'false');
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -74,7 +72,7 @@ divModal.appendChild(labelTextaera);
 divModal.appendChild(inputTextarea);
 
 
-//envoi des données du formulaire 
+// soumission du formulaire au clavier
 form.addEventListener('submit', (event) => {
   event.preventDefault(); // Empêche le rechargement de la page
   event.stopPropagation(); // Arrête la propagation de l'événement
@@ -104,6 +102,7 @@ form.addEventListener('submit', (event) => {
   } 
 });
 
+// soumission du formulaire au clic
 const contactBtn = document.querySelector(".contact_button")
 contactBtn.addEventListener("click", e => {
   e.preventDefault();
@@ -126,18 +125,17 @@ contactBtn.addEventListener("click", e => {
       closeModal();
       document.querySelectorAll('form input, form textarea').forEach(input => input.value = '');
       alert("Votre formulaire a bien été envoyé");
-    } 
-  }
-)
+  } 
+}) 
 
-// écouteur global pour fermer la modal avec Échap
+// écouteur global pour fermer la modale avec Échap
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     closeModal();
   }
 });
 
-//bouton fermeture de la modale avec la croix via le keyboard
+// bouton fermeture de la modale avec la croix via le keyboard
 const BtnFormCloseKeyb = document.querySelector(".close-modal-contact"); 
 BtnFormCloseKeyb.addEventListener("keyup", function (e) {
   if (e.code == 'Space' || e.key === 'Enter') { 
@@ -146,11 +144,9 @@ BtnFormCloseKeyb.addEventListener("keyup", function (e) {
 });
 
 
-// Gérer la navigation au clavier
+// Gestion du focus du formulaire au clavier
 const formContact = document.querySelector("#contact_modal");
 const focusableElements = formContact.querySelectorAll("input, textarea, button, img");
-console.log(formContact);
-console.log(focusableElements);
 const firstElement = focusableElements[0];
 const lastElement = focusableElements[focusableElements.length - 1];
 

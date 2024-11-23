@@ -14,7 +14,6 @@ function displayLightbox(id) {
   const lightbox = document.querySelector("#lightbox");
   const lightboxImage = document.querySelector(".lightbox-image");
   if (lightbox) {
-    //lightbox.style.display = "flex";
     lightbox.showModal();
     lightboxImage.innerHTML = myMedia.getMarkup();
     lightbox.setAttribute("aria-hidden", "false");
@@ -31,12 +30,11 @@ function displayLightbox(id) {
 
 function closeLightBox() {
   const lightbox = document.querySelector("#lightbox");
-  //lightbox.style.display = "none";
   lightbox.close();
   lightbox.setAttribute("aria-hidden", "true");
 }
 
-//bouton fermeture de la modale
+// bouton fermeture de la modale
 const lightbox = document.querySelector("#lightbox");
 const lightboxClose = document.createElement("img"); 
 lightboxClose.src = "assets/icons/close.svg";
@@ -46,7 +44,7 @@ lightboxClose.addEventListener("click", function () {
 });
 
 
-// Ajouter les images et vidéos dans la modal
+// Ajout des images et vidéos dans la modal
 function populateCarousel(mediaList) {
   lightbox.innerHTML = ""; // Vider le carousel
   mediaList.forEach((media) => {

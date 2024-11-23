@@ -16,11 +16,10 @@ async function CountLikes() {
     let c = parseInt(counterLikeP.innerText, 10);
     totalCount += c;
 
-    // Ajouter un attribut aria-pressed pour indiquer l'état du bouton 
-    // heartIcon.setAttribute("role", "button"); 
-    heartIcon.setAttribute("aria-pressed", "false"); 
-    heartIcon.setAttribute("tabindex", "0"); // Ajouter tabindex pour la navigation au clavier
+    heartIcon.setAttribute("aria-pressed", "false"); // indique l'état du bouton 
+    heartIcon.setAttribute("tabindex", "0"); // permet de donner le focus
     
+    // gestion au clic de mise à jour nbre de like par item
     heartIcon.addEventListener("click", (e) => {
       e.stopImmediatePropagation();
       e.stopPropagation();
@@ -42,17 +41,18 @@ async function CountLikes() {
         counterLikeP.innerHTML = pLike;
         globalCount--;
         globalCounter.innerHTML = globalCount;
-        heartIcon.setAttribute("aria-pressed", "false"); // Mettre à jour aria-pressed
+        heartIcon.setAttribute("aria-pressed", "false"); // Met à jour aria-pressed
       } else {
         likedMedias.push(id);
         pLike++;
         counterLikeP.innerHTML = pLike;
         globalCount++;
         globalCounter.innerHTML = globalCount;
-        heartIcon.setAttribute("aria-pressed", "true"); // Mettre à jour aria-pressed
+        heartIcon.setAttribute("aria-pressed", "true"); // Met à jour aria-pressed
       }
     });
 
+    // gestion au clavier de mise à jour nbre de like par item
     heartIcon.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();

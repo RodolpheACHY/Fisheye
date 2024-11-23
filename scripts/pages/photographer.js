@@ -21,6 +21,7 @@ async function getPhotographerData(photographerId) {
     (media) => media.photographerId === photographerId
   );
 
+  //Tri des médias selon sa popularité, sa date d'ajout ou son titre  
   switch (sortType) {
     case "populary":
       medias.sort((a, b) => b.likes - a.likes); // Tri décroissant par popularité
@@ -63,13 +64,12 @@ async function init() {
     console.log("medias", photographerData.medias);   //photographerData.medias
     const mediaContainer = document.getElementById("media-container");
     mediaContainer.innerHTML = ''; // Vider le conteneur
-    photographerData.medias.forEach((m) => {      //photographerData.medias
-      const myMedia = mediaFactory(m, photographerData.photographer.folder);   //photographerData.photographer.folder
+    photographerData.medias.forEach((m) => { 
+      const myMedia = mediaFactory(m, photographerData.photographer.folder);
       console.log("myMedia", myMedia);
       console.log("myMedia.getMarkup", myMedia.getMarkup());
       
       const div = document.createElement("div");
-      // const slide = document.querySelector("")
       div.innerHTML = myMedia.getMarkup();
       div.setAttribute("aria-label", `Media intitulé: ${myMedia.title}`);
 
@@ -84,8 +84,6 @@ async function init() {
       pLike.textContent = myMedia.likes;
       pLike.setAttribute("aria-label", `Likes: ${myMedia.likes}`)
 
-      //const heartIcon = document.createElement("i");
-      // const heartIcon = document.createElement("span");  ok pour le span 
       const heartIcon = document.createElement("button");
       heartIcon.classList.add("fa-solid", "fa-heart", "heartIcon");
 
@@ -99,9 +97,6 @@ async function init() {
       div.classList.add("grid-item");
       div.dataset.mediaId = m.id;
       div.setAttribute("id", myMedia.id);
-      // Adding tabindex for keyboard navigation
-      //div.setAttribute("tabindex", "0");
-      
       mediaContainer.append(div);
     });
 

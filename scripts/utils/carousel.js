@@ -11,8 +11,8 @@ nextBtn.setAttribute("aria-label", "Image suivante");
 
 lightbox.append(prevBtn, nextBtn);
 
+// gestion de la navigation au clic
 const buttons = document.querySelectorAll(".btn");
-
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     const gridItems = document.querySelectorAll(".grid-item");

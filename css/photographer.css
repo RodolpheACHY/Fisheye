@@ -258,6 +258,7 @@ select option {
   border: none;
   background: transparent;
   color: #901c1c;
+  cursor: pointer;
 }
 h2 {
   font-weight: normal;
