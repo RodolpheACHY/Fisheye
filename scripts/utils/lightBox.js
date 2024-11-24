@@ -44,7 +44,7 @@ lightboxClose.addEventListener("click", function () {
 });
 
 
-// Ajout des images et vidéos dans la modal
+// Ajout des images et vidéos dans la modale
 function populateCarousel(mediaList) {
   lightbox.innerHTML = ""; // Vider le carousel
   mediaList.forEach((media) => {
@@ -71,7 +71,7 @@ function showItem(index) {
   items[index].focus(); // Déplacer le focus vers l'élément actif
 }
 
-// Ouverture de la modal au clic sur un élément média
+// Ouverture de la modale au clic sur un élément média
 const items = document.querySelectorAll(".grid-item");
 items.forEach((item, index) => {
   item.addEventListener("click", () => {

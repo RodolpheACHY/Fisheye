@@ -61,7 +61,7 @@ async function init() {
     //Fonction pour afficher les médias 
     const displayMedias = () => {
     // Afficher les médias dans la console
-    console.log("medias", photographerData.medias);   //photographerData.medias
+    console.log("medias", photographerData.medias);
     const mediaContainer = document.getElementById("media-container");
     mediaContainer.innerHTML = ''; // Vider le conteneur
     photographerData.medias.forEach((m) => { 

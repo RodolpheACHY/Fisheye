@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 function displayModal() {
   const modal = document.getElementById("contact_modal");
-	//modal.style.display = "block";
   modal.showModal();
   // Déplacer le focus vers la modale pour les utilisateurs de lecteurs d'écran
   modal.setAttribute('aria-hidden', 'false');
