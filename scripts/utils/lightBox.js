@@ -1,7 +1,6 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
+/* global photographerMedias mediaFactory photographerFolder  */
 let currentIndex = 0;
-
+// eslint-disable-next-line no-unused-vars
 function displayLightbox(id) {
   console.log("id", id, photographerMedias);
   currentIndex = photographerMedias.findIndex(

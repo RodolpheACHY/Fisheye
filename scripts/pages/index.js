@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+    /* global photographerTemplate */
     async function getPhotographers() {
         const response = await fetch("/data/photographers.json");
         let datas = await response.json();

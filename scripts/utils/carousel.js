@@ -1,10 +1,10 @@
-/* eslint-disable no-undef */
-prevBtn = document.createElement("button");
+/* global displayLightbox photographerMedias currentIndex lightbox */
+const prevBtn = document.createElement("button");
 prevBtn.id = "prev";
 prevBtn.classList.add("btn");
 prevBtn.setAttribute("aria-label", "Image précédente");
 
-nextBtn = document.createElement("button");
+const nextBtn = document.createElement("button");
 nextBtn.id = "next";
 nextBtn.classList.add("btn");
 nextBtn.setAttribute("aria-label", "Image suivante");

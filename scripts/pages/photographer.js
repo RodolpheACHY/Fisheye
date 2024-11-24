@@ -1,12 +1,13 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
+/* global photographerPageTemplate mediaFactory displayLightbox displayPhotographerName CountLikes */
+// eslint-disable-next-line no-unused-vars
 let photographerMedias = [];
+// eslint-disable-next-line no-unused-vars
 let photographerFolder = "";
 //Mettre le code JavaScript lié à la page photographer.html
 async function getPhotographerData(photographerId) {
   const response = await fetch("/data/photographers.json"); // Remplace par l'URL correcte
   const datas = await response.json();
-  sortType = document.getElementById('filter-select').value;
+  const sortType = document.getElementById('filter-select').value;
 
   const photographer = datas.photographers.filter(
     (p) => p.id === photographerId

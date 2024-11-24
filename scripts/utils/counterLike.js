@@ -1,4 +1,5 @@
-/* eslint-disable no-unused-vars */
+
+// eslint-disable-next-line no-unused-vars
 async function CountLikes() {
   console.log("CountLikes");
   const heartIcons = document.querySelectorAll(".heartIcon");

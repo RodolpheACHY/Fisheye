@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+// eslint-disable-next-line no-unused-vars
 function photographerTemplate(data) {
     const { name, id, city, country, tagline, price, portrait } = data;
 
