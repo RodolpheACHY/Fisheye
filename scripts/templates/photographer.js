@@ -2,7 +2,7 @@
 function photographerTemplate(data) {
     const { name, id, city, country, tagline, price, portrait } = data;
 
-    const picture = `assets/photographers/${portrait}`;
+    const picture = `./assets/photographers/${portrait}`;
 
     function getUserCardDOM() {
         // Création d'une balise dédiée à chaque photographe

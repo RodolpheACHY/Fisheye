@@ -8,9 +8,9 @@ const mediaFactory = function (media, folder) {
     title,
     getMarkup: function () {
       if (video) {
-        return `<video src="/assets/photographers/${folder}/${video}" controls aria-label="${title}" />`;
+        return `<video src="./assets/photographers/${folder}/${video}" controls aria-label="${title}" />`;
       } else if (image) {
-        return `<img src="/assets/photographers/${folder}/${image}" alt="${title}" tabindex="0" />`;
+        return `<img src="./assets/photographers/${folder}/${image}" alt="${title}" tabindex="0" />`;
       }
     },
   };
