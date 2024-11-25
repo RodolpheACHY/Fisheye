@@ -5,7 +5,7 @@ let photographerMedias = [];
 let photographerFolder = "";
 //Mettre le code JavaScript lié à la page photographer.html
 async function getPhotographerData(photographerId) {
-  const response = await fetch("/data/photographers.json"); // Remplace par l'URL correcte
+  const response = await fetch("./data/photographers.json"); // Remplace par l'URL correcte
   const datas = await response.json();
   const sortType = document.getElementById('filter-select').value;
 
