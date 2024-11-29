@@ -36,7 +36,7 @@ function closeLightBox() {
 // bouton fermeture de la modale
 const lightbox = document.querySelector("#lightbox");
 const lightboxClose = document.createElement("img"); 
-lightboxClose.src = "assets/icons/close.svg";
+lightboxClose.src = "./assets/icons/close.svg";
 lightboxClose.setAttribute("alt", "Ferme la lightbox");
 lightboxClose.addEventListener("click", function () {
   closeLightBox();

@@ -1,16 +1,22 @@
 // eslint-disable-next-line no-unused-vars
 function photographerTemplate(data) {
+    // Destructuration de data pour récupérer les données utiles 
     const { name, id, city, country, tagline, price, portrait } = data;
 
+    // Construction du chemin d'accès à l'image du portrait 
     const picture = `./assets/photographers/${portrait}`;
 
+    // Fonction qui crée et retourne l'élément DOM représentant la carte sur laquelle on va cliquer
     function getUserCardDOM() {
-        // Création d'une balise dédiée à chaque photographe
+
+        // Création d'un élémént article pour chaque photographe
         const article = document.createElement( 'article' );
+        // Utilisation de l'attribut data-id pour stocker l'ID du photographe
         article.dataset.id = data.id;
         console.log(article.dataset.id);
         article.classList.add("photographer-item");
 
+        // Création du lien pointant vers la page du photographe
         const aLink = document.createElement("a");
         aLink.setAttribute("href", "photographer.html?id=" + id);
         article.appendChild(aLink);
@@ -42,7 +48,9 @@ function photographerTemplate(data) {
         pPrice.setAttribute("aria-label", `Prix: ${price} euros par jour`);
         aLink.appendChild(pPrice);
 
+        // On retourne l'élément <article> complet 
         return (article);
     }
+    // On retourne un objet contenant le nom du photogrpahe, le chemin de l'image, et la méthode pour créer la carte utilisateur 
     return { name, picture, getUserCardDOM }
 }

@@ -3,12 +3,13 @@
 let photographerMedias = [];
 // eslint-disable-next-line no-unused-vars
 let photographerFolder = "";
-//Mettre le code JavaScript lié à la page photographer.html
+// récupère les datas de tous les photographes
 async function getPhotographerData(photographerId) {
-  const response = await fetch("./data/photographers.json"); // Remplace par l'URL correcte
+  const response = await fetch("./data/photographers.json");
   const datas = await response.json();
   const sortType = document.getElementById('filter-select').value;
 
+  // Filtre des photographes par leur ID 
   const photographer = datas.photographers.filter(
     (p) => p.id === photographerId
   );
@@ -17,12 +18,12 @@ async function getPhotographerData(photographerId) {
     throw new Error("Photographe non trouvé");
   }
 
-  // Filtrer les médias pour le photographe spécifique
+  // Filtre des médias pour un photographe spécifique
   const medias = datas.media.filter(
     (media) => media.photographerId === photographerId
   );
 
-  //Tri des médias selon sa popularité, sa date d'ajout ou son titre  
+  // Tri des médias selon le type de tri sélectionné 
   switch (sortType) {
     case "populary":
       medias.sort((a, b) => b.likes - a.likes); // Tri décroissant par popularité
@@ -117,8 +118,7 @@ async function init() {
     });
 };
 
-
-//Afficher les médias initialement
+// Afficher les médias initialement
 displayMedias(photographerData.medias, photographerData.photographer);
 
 // Afficher le nom du photographe 
