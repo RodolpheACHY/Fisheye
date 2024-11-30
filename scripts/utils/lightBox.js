@@ -2,14 +2,11 @@
 let currentIndex = 0;
 // eslint-disable-next-line no-unused-vars
 function displayLightbox(id) {
-  console.log("id", id, photographerMedias);
   currentIndex = photographerMedias.findIndex(
     (m) => m.id.toString() === id.toString()
   );
   const m = photographerMedias[currentIndex];
-  console.log("m", m);
   const myMedia = mediaFactory(m, photographerFolder);
-  console.log("myMedia", myMedia.getMarkup());
   const lightbox = document.querySelector("#lightbox");
   const lightboxImage = document.querySelector(".lightbox-image");
   if (lightbox) {

@@ -10,8 +10,6 @@
     
     async function displayData(datas) {
         const photographersSection = document.querySelector(".photographer_section");
-        console.log(datas) 
-        console.log(typeof datas)
         datas.photographers.forEach((photographer) => {
             const photographerModel = photographerTemplate(photographer);
             const userCardDOM = photographerModel.getUserCardDOM();

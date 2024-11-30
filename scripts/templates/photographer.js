@@ -13,7 +13,6 @@ function photographerTemplate(data) {
         const article = document.createElement( 'article' );
         // Utilisation de l'attribut data-id pour stocker l'ID du photographe
         article.dataset.id = data.id;
-        console.log(article.dataset.id);
         article.classList.add("photographer-item");
 
         // Création du lien pointant vers la page du photographe

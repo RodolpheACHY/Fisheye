@@ -1,7 +1,6 @@
 
 // eslint-disable-next-line no-unused-vars
 async function CountLikes() {
-  console.log("CountLikes");
   const heartIcons = document.querySelectorAll(".heartIcon");
   let likedMedias = [];
   const globalCounter = document.querySelector("#containerCountLike p");
@@ -33,12 +32,7 @@ async function CountLikes() {
       const counterLikeP = e.target
         .closest(".likeContainer")
         .querySelector("p");
-
-      // Gestion dynamique du nbre de likes pour un seul item lors d'un clic ou qd on appuie sur une touche
       let currentItemLikes = parseInt(counterLikeP.innerText, 10);
-      console.log("counterLikeP", counterLikeP, currentItemLikes);
-      console.log("e", e.target);
-      console.log("isIncremented", isIncremented);
 
       if (isIncremented) {
         likedMedias = likedMedias.filter((item) => item !== id);
@@ -69,11 +63,7 @@ async function CountLikes() {
         const counterLikeP = e.target
           .closest(".likeContainer")
           .querySelector("p");
-
         let currentItemLikes = parseInt(counterLikeP.innerText, 10);
-        console.log("counterLikeP", counterLikeP, currentItemLikes);
-        console.log("e", e.target);
-        console.log("isIncremented", isIncremented);
 
         if (isIncremented) {
           likedMedias = likedMedias.filter((item) => item !== id);

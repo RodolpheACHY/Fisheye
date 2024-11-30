@@ -62,14 +62,10 @@ async function init() {
     
     //Fonction pour afficher les médias 
     const displayMedias = () => {
-    // Afficher les médias dans la console
-    console.log("medias", photographerData.medias);
     const mediaContainer = document.getElementById("media-container");
     mediaContainer.innerHTML = ''; // Vider le conteneur
     photographerData.medias.forEach((m) => { 
       const myMedia = mediaFactory(m, photographerData.photographer.folder);
-      console.log("myMedia", myMedia);
-      console.log("myMedia.getMarkup", myMedia.getMarkup());
       
       const div = document.createElement("div");
       div.innerHTML = myMedia.getMarkup();

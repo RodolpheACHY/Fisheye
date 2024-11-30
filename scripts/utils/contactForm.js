@@ -75,7 +75,6 @@ divModal.appendChild(inputTextarea);
 form.addEventListener('submit', (event) => {
   event.preventDefault(); // Empêche le rechargement de la page
   event.stopPropagation(); // Arrête la propagation de l'événement
-  console.log('Formulaire soumis');
 
   const prenomValue = inputPrenom.value;
   const nameValue = inputNom.value;
@@ -106,7 +105,6 @@ const contactBtn = document.querySelector(".contact_button")
 contactBtn.addEventListener("click", e => {
   e.preventDefault();
   e.stopPropagation(); // Arrête la propagation de l'événement
-  console.log('Formulaire soumis');
 
   const formData = {
     prenom: document.getElementById('prenom').value,
@@ -148,10 +146,6 @@ const formContact = document.querySelector("#contact_modal");
 const focusableElements = formContact.querySelectorAll("input, textarea, button, img");
 const firstElement = focusableElements[0];
 const lastElement = focusableElements[focusableElements.length - 1];
-
-console.log("focusableElements:", focusableElements);
-console.log("firstElement:", firstElement);
-console.log("lastElement:" , lastElement);
 
 firstElement.addEventListener("keydown", (event) => {
   if (event.key === "Tab" && event.shiftKey) {
