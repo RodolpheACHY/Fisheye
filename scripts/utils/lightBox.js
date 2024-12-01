@@ -13,8 +13,6 @@ function displayLightbox(id) {
     lightbox.showModal();
     lightboxImage.innerHTML = myMedia.getMarkup();
     lightbox.setAttribute("aria-hidden", "false");
-    //lightbox.setAttribute("role", "dialog");
-    //lightboxImage.setAttribute("aria-labelledby", "lightbox_label");
     lightbox.focus();
   }
   const lightboxh3 = document.createElement("h3");
