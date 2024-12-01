@@ -13,8 +13,8 @@ function displayLightbox(id) {
     lightbox.showModal();
     lightboxImage.innerHTML = myMedia.getMarkup();
     lightbox.setAttribute("aria-hidden", "false");
-    lightbox.setAttribute("role", "dialog");
-    lightboxImage.setAttribute("aria-labelledby", "lightbox_label");
+    //lightbox.setAttribute("role", "dialog");
+    //lightboxImage.setAttribute("aria-labelledby", "lightbox_label");
     lightbox.focus();
   }
   const lightboxh3 = document.createElement("h3");
@@ -53,12 +53,12 @@ function populateCarousel(mediaList) {
       mediaElement = document.createElement("img");
       mediaElement.src = media.src;
     }
-    mediaElement.classList.add(".grid-item");
+    mediaElement.classList.add("grid-item");
     lightbox.appendChild(mediaElement);
   });
 }
 
-// Afficher l'élément actif
+// Afficher l'élément actif dans la lightbox
 function showItem(index) {
   const items = document.querySelectorAll(".grid-item");
   items.forEach((item) => item.classList.remove("active"));
@@ -72,7 +72,7 @@ const items = document.querySelectorAll(".grid-item");
 items.forEach((item, index) => {
   item.addEventListener("click", () => {
     currentIndex = index;
-    populateCarousel(item.mediaList); // `mediaList` doit être attaché à `item`
+    populateCarousel(item.mediaList); // mediaList` doit être attaché à `item`, l'élément cliqué
     showItem(currentIndex);
     lightbox.style.display = "flex";
   });
