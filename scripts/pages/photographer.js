@@ -94,34 +94,43 @@ async function init() {
       div.append(h2LikeContainer);
       div.classList.add("grid-item");
       div.dataset.mediaId = m.id;
-      div.setAttribute("id", myMedia.id);
+      div.setAttribute("id", myMedia.id); 
       mediaContainer.append(div);
     });
 
     document.querySelectorAll(".grid-item").forEach((item) => {
-      item.addEventListener("click", (e) => {
+      // on sélectionne les éléments img et vidéo à l'intérieur de chqe grid-item
+      const mediaElments = item.querySelectorAll ("img, video");
+      mediaElments.forEach((media) => {
+        // On ajoute un écouteur d'évènement au clic à chqe media
+        media.addEventListener("click", (e) => {
+        e.stopPropagation();
         const id = e.target.closest(".grid-item").dataset.mediaId;
         displayLightbox(id);
-      });
+        });
 
-      item.addEventListener("keydown", (e) => { 
-        if (e.key === "Enter" || e.key === " ") { // Vérifier les touches"Enter" et "Space"
-          e.preventDefault(); // Empêcher le comportement par défaut 
-          const id = e.target.closest(".grid-item").dataset.mediaId; 
-          displayLightbox(id); 
-        }     
-      });
+        // On ajoute un écouteur d'évènement keydown à chqe media
+        media.addEventListener("keydown", (e) => { 
+          if (e.key === "Enter" || e.key === " ") { // Vérifier les touches"Enter" et "Space"
+            e.preventDefault(); // Empêcher le comportement par défaut 
+            e.stopPropagation();
+            const id = e.target.closest(".grid-item").dataset.mediaId; 
+            displayLightbox(id); 
+          }     
+        });
+      });  
     });
-};
+  }
+ //};
 
-// Afficher les médias initialement
-displayMedias(photographerData.medias, photographerData.photographer);
+ // Afficher les médias initialement
+ displayMedias(photographerData.medias, photographerData.photographer);
 
-// Afficher le nom du photographe 
-displayPhotographerName(photographerData.photographer.name);
+ // Afficher le nom du photographe 
+ displayPhotographerName(photographerData.photographer.name);
 
-// Ajouter l'écouteur d'événements pour le changement de tri
-filterSelect.addEventListener('change', async () => {
+ // Ajouter l'écouteur d'événements pour le changement de tri
+  filterSelect.addEventListener('change', async () => {
     photographerData = await getPhotographerData(photographerId);
     displayMedias(photographerData.medias, photographerData.photographer);
   });

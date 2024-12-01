@@ -23,6 +23,7 @@ async function CountLikes() {
     
     // gestion au clic de mise à jour nbre de like par item
     heartIcon.addEventListener("click", (e) => {
+      console.log("Clic sur heartIcon");
       e.stopImmediatePropagation();
       e.stopPropagation();
       // cette variable est utilisée dans les évènements pour gérer le compteur globale en temps réel
@@ -54,6 +55,7 @@ async function CountLikes() {
     // gestion au clavier de mise à jour nbre de like par item
     heartIcon.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
+        console.log("Touche pressée sur item");
         e.preventDefault();
         e.stopImmediatePropagation();
         e.stopPropagation();
