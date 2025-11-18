@@ -49,8 +49,10 @@ HTML, CSS, JavaScript, design patterns, accessibilité web
 
 Pour toute question ou collaboration :
 
+```
 📧 Email : rod23_reseaux@yahoo.fr 
 💼 Portfolio : en cours de contruction
+```
 
 --
 
