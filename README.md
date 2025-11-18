@@ -26,21 +26,42 @@ HTML, CSS, JavaScript, design patterns, accessibilité web
 ```
 /
 │── README.md
-│── docs/
-└── starterOnly/
-     │── Logo.png
-     │── bg_img.jpg
-     │── index.html
-     │── modal.css
-     │── modal.js
-     └── DM_Sans/
+│── .nojekill
+│── eslint.config.mjs
+│── index.html
+│── package-lock.json
+│── package.json
+│── photographer.html
+│── .vscode/
+│── assets/
+│── css/
+|    │── lightbox.css
+|    │── photographer.css
+|    └── style.css
+│── data/
+|    └── photographers.json
+└── scripts/
+     │── pages/
+     |    │── photographer.js
+     |    └── index.js
+     │── templates/
+     |     │── photographer.js
+     |     └── photographerPage.js
+     └── utils/
+         │── carousel.js
+         │── contactForm.js
+         │── counterLike.js
+         │── lightBox.js
+         └── mediaFactory.js
+
 ```
 
 ---
 
 ## 📸 Aperçu
 
-<img width="1326" height="782" alt="thumb6" src="https://github.com/user-attachments/assets/6dfef102-e6ab-4515-bb38-707e131fa0e0" />
+<img width="1316" height="744" alt="image" src="https://github.com/user-attachments/assets/20c1c13e-48cf-4da3-a9c3-dc7782477a0c" />
+
 
 
 ---
