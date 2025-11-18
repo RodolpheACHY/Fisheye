@@ -56,8 +56,6 @@ HTML, CSS, JavaScript, design patterns, accessibilité web
 
 ```
 
----
-
 ## 📸 Aperçu
 
 <img width="1316" height="744" alt="image" src="https://github.com/user-attachments/assets/20c1c13e-48cf-4da3-a9c3-dc7782477a0c" />
