@@ -4,8 +4,6 @@
 
 Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.
 
-# Projet - Plateforme accessible pour photographe
-
 ## Description
 Développement d'un site web accessible pour une plateforme d’artistes photographes. Ce projet met l’accent sur la création d’une application web modulaire, maintenable, en s’appuyant sur des design patterns JavaScript. À partir de maquettes, données JSON et la basecode, il s’agit d’intégrer des fonctionnalités clés comme la navigation entre pages, une modale de contact, une LightBox pour les médias, et la gestion des likes, en assurant une forte accessibilité.
 
