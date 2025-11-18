@@ -1,4 +1,4 @@
-# Projet - Plateforme accessible pour photographe
+# 📷 Projet Fisheye - Plateforme accessible pour photographe
 
 ## Démarrer le projet
 
